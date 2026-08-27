@@ -217,6 +217,72 @@ section{padding:100px 0;scroll-margin-top:100px}
 .ok{color:#fff;padding:15px 18px;border-radius:12px;font-size:14.5px;line-height:1.55;margin-top:16px;display:none}
 .ok.show{display:block}
 
+
+/* neighbourhood */
+.hood-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.walk{display:grid;gap:0;margin-top:8px}
+.walk div{display:flex;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px solid var(--rule)}
+.walk .t{font-family:var(--display);font-size:19px;color:var(--sage);width:74px;flex:none}
+.walk .p{font-size:15px;color:rgba(42,39,33,.78)}
+
+/* progress */
+.prog{background:var(--linen)}
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:44px}
+.step{padding:0 16px;border-top:2px solid var(--rule);position:relative}
+.step.done{border-top-color:var(--olive)}
+.step .mark{
+  width:15px;height:15px;border-radius:999px;background:var(--paper);
+  border:2px solid var(--rule);margin:-8px 0 16px;
+}
+.step.done .mark{background:var(--olive);border-color:var(--olive)}
+.step .when{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--clay);margin-bottom:7px}
+.step .what{font-family:var(--display);font-size:16px;line-height:1.3}
+.step .note{font-size:13px;color:rgba(42,39,33,.6);margin-top:6px;line-height:1.5}
+
+/* faq */
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:20px 34px 20px 0;position:relative;
+  font-family:var(--display);font-size:18px;line-height:1.35;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{
+  content:"+";position:absolute;right:4px;top:19px;font-family:var(--body);
+  font-size:22px;color:var(--clay);font-weight:400;line-height:1;
+}
+.faq details[open] summary:after{content:"\2013"}
+.faq .a{padding:0 40px 22px 0;font-size:15px;line-height:1.7;color:rgba(42,39,33,.78)}
+.faq .a p{margin:0 0 10px}
+.faq .a p:last-child{margin:0}
+
+/* founding offer */
+.offer{background:var(--sand);border-radius:var(--arch-card);padding:34px 32px 30px;margin-top:26px}
+.offer h3{font-size:19px;margin-bottom:14px}
+.offer ul{margin:0;padding:0;list-style:none}
+.offer li{font-size:14.5px;line-height:1.6;padding:8px 0 8px 26px;position:relative;color:rgba(42,39,33,.82)}
+.offer li:before{content:"";position:absolute;left:0;top:15px;width:11px;height:11px;border-radius:99px 99px 2px 2px;background:var(--clay)}
+
+/* cookie / privacy notice */
+#cookie{
+  position:fixed;left:18px;right:18px;bottom:18px;z-index:150;
+  background:var(--sage);color:var(--linen);border-radius:16px;
+  padding:18px 22px;display:none;align-items:center;gap:20px;flex-wrap:wrap;
+  box-shadow:0 14px 40px rgba(42,39,33,.28);max-width:760px;margin:0 auto;
+}
+#cookie.show{display:flex}
+#cookie p{margin:0;font-size:14px;line-height:1.6;flex:1;min-width:240px;color:rgba(246,240,228,.9)}
+#cookie a{color:var(--sand)}
+#cookie button{
+  background:var(--linen);color:var(--sage);border:none;border-radius:999px;
+  padding:11px 24px;font-family:var(--body);font-weight:600;font-size:14px;cursor:pointer;
+}
+
+/* legal footer row */
+.flegal{display:flex;gap:18px;flex-wrap:wrap}
+.flegal a{display:inline;padding:0;font-size:12.5px;color:rgba(246,240,228,.6)}
+.flegal a:hover{color:#fff}
+
 /* footer */
 footer{background:var(--sage);color:rgba(246,240,228,.84);padding:78px 0 36px}
 .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:48px}
@@ -242,7 +308,9 @@ footer p:last-child{margin-bottom:0}
   .tl{grid-template-columns:1fr 1fr;gap:0 34px}
   .tl-item{border-left:none;border-top:1px solid rgba(246,240,228,.24);padding:22px 0}
   .tl-item:first-child{padding-top:22px;border-top:1px solid rgba(246,240,228,.24)}
-  .lgrid,.pgrid{grid-template-columns:1fr}
+  .lgrid,.pgrid,.hood-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:0 24px}
+  .step{padding:0 0 24px}
   .fgrid{grid-template-columns:1fr 1fr;gap:40px}
   nav.links{display:none}
   nav.links.open{display:flex;position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;padding:22px 32px;gap:12px;border-bottom:1px solid var(--rule);box-shadow:0 14px 26px rgba(42,39,33,.1)}
@@ -263,6 +331,7 @@ footer p:last-child{margin-bottom:0}
   .ggrid{grid-template-columns:1fr 1fr;gap:14px}
   .room-img,.gcell img{height:132px}
   .tl{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
   .hero{padding:52px 0 64px}
   .room-body{padding:24px 22px 26px}
   .vcard{padding:48px 26px 34px}
@@ -303,10 +372,11 @@ document.addEventListener('error', function (e) {
       <a href="#values">Approach</a>
       <a href="#rooms">Rooms</a>
       <a href="#inside">The space</a>
+      <a href="#faq">Questions</a>
       <a href="#day">A day here</a>
       <a href="#locations">Visit</a>
     </nav>
-    <a href="#tour" class="btn btn-clay" style="padding:12px 22px">Book a tour</a>
+    <a href="#tour" class="btn btn-clay" style="padding:12px 22px">Join the waitlist</a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -320,7 +390,7 @@ document.addEventListener('error', function (e) {
       <h1>Rooted in curiosity.<br>Growing together.</h1>
       <p class="lede">A warm, nurturing space in Greenpoint where children feel seen, supported and inspired to grow — from three months through pre-K.</p>
       <div class="hero-cta">
-        <a href="#tour" class="btn btn-clay">Book a tour</a>
+        <a href="#tour" class="btn btn-clay">Join the waitlist</a>
         <a href="#rooms" class="btn btn-ghost">See our rooms</a>
       </div>
       <div class="hero-facts">
@@ -481,6 +551,45 @@ document.addEventListener('error', function (e) {
   </div>
 </section>
 
+<section id="neighbourhood" style="padding-top:0">
+  <div class="shell hood-grid rv">
+    <div>
+      <p class="eyebrow">The neighbourhood</p>
+      <h2>On the Greenpoint waterfront.</h2>
+      <p class="lede" style="margin-bottom:10px">79 Quay Street sits on the corner of West Street, a few minutes from the ferry and the park.</p>
+      <div class="walk">
+        <div><span class="t">2 min</span><span class="p">Newtown Barge Park</span></div>
+        <div><span class="t">4 min</span><span class="p">India Street ferry to Midtown and Wall Street</span></div>
+        <div><span class="t">6 min</span><span class="p">WNYC Transmitter Park</span></div>
+        <div><span class="t">9 min</span><span class="p">Greenpoint Avenue G train</span></div>
+        <div><span class="t">12 min</span><span class="p">Nassau Avenue G train</span></div>
+      </div>
+      <a class="btn btn-ghost" style="margin-top:26px" href="https://www.google.com/maps/search/?api=1&query=79+Quay+Street+Brooklyn+NY+11222" target="_blank" rel="noopener">Open in Maps</a>
+    </div>
+    <div class="archbox-map" style="border-radius:var(--arch-card);overflow:hidden;background:var(--sand)">
+      <img loading="lazy" width="1500" height="1000" decoding="async" loading="lazy" decoding="async" src="g4.webp" alt="Reception and hallway at 79 Quay Street" style="width:100%;height:340px;object-fit:cover;display:block">
+    </div>
+  </div>
+</section>
+
+<section class="prog" id="progress">
+  <div class="shell">
+    <div class="section-head rv">
+      <p class="eyebrow">Follow the build</p>
+      <h2>Where we are.</h2>
+      <p class="lede">We'll update this page as the space comes together. Edit the dates and statuses as milestones land.</p>
+    </div>
+    <div class="steps rv">
+      <div class="step done"><div class="mark"></div><div class="when">Complete</div><div class="what">Space secured</div><div class="note">Ground floor at 79 Quay Street.</div></div>
+      <div class="step done"><div class="mark"></div><div class="when">Complete</div><div class="what">Interior design</div><div class="note">Layout, materials and finishes set.</div></div>
+      <div class="step"><div class="mark"></div><div class="when">In progress</div><div class="what">Filings and permits</div><div class="note">DOB and agency approvals.</div></div>
+      <div class="step"><div class="mark"></div><div class="when">Next</div><div class="what">Construction</div><div class="note">Build-out of both floors.</div></div>
+      <div class="step"><div class="mark"></div><div class="when">Next</div><div class="what">Licensing</div><div class="note">OCFS inspection and permit.</div></div>
+      <div class="step"><div class="mark"></div><div class="when">March 2027</div><div class="what">Doors open</div><div class="note">First families start.</div></div>
+    </div>
+  </div>
+</section>
+
 <section id="locations">
   <div class="shell">
     <div class="section-head rv">
@@ -543,12 +652,72 @@ document.addEventListener('error', function (e) {
   </div>
 </section>
 
+<section id="faq" style="padding-top:0">
+  <div class="shell">
+    <div class="section-head rv">
+      <p class="eyebrow">Questions</p>
+      <h2>What parents ask first.</h2>
+    </div>
+    <div class="faq rv">
+      <details>
+        <summary>What does it cost?</summary>
+        <div class="a"><p>Tuition is billed monthly and covers meals, snacks and all materials. Rates for the 2027 opening will be published before enrolment opens; families on the waitlist hear first.</p></div>
+      </details>
+      <details>
+        <summary>Do you offer part-time schedules?</summary>
+        <div class="a"><p>Yes. Alongside five-day enrolment we offer three-day schedules, subject to availability in each room. Part-time places are limited and fill first.</p></div>
+      </details>
+      <details>
+        <summary>What are the hours, and is there early drop-off?</summary>
+        <div class="a"><p>Monday to Friday, 7:30am to 6:00pm. Early drop-off from 7:00am is available as an add-on for families catching the ferry.</p></div>
+      </details>
+      <details>
+        <summary>What happens at meals?</summary>
+        <div class="a"><p>Lunch and two snacks are delivered daily by our food provider and prepped on site. We are a nut-free building and accommodate allergies and dietary requirements. Menus are shared with families each week.</p></div>
+      </details>
+      <details>
+        <summary>Does my child need to be potty trained?</summary>
+        <div class="a"><p>No. We work alongside families on toilet learning when a child is ready, and children in every room are welcome in nappies.</p></div>
+      </details>
+      <details>
+        <summary>What is the sick policy?</summary>
+        <div class="a"><p>Children stay home with a fever, vomiting or anything contagious, and may return 24 hours after symptoms resolve without medication. Full details are in the family handbook, which we share before enrolment.</p></div>
+      </details>
+      <details>
+        <summary>How do you handle security and pickup?</summary>
+        <div class="a"><p>The entrance is locked and staffed during opening hours. Only adults you have named in writing may collect your child, and photo ID is checked until we know them.</p></div>
+      </details>
+      <details>
+        <summary>How will I know how my child's day went?</summary>
+        <div class="a"><p>Daily notes and photos come through the parent app, plus a short conversation at pickup. Families also get scheduled check-ins through the year.</p></div>
+      </details>
+      <details>
+        <summary>Are you licensed?</summary>
+        <div class="a"><p>The centre will operate under a New York State OCFS permit. The permit and inspection history will be posted at reception and available on request.</p></div>
+      </details>
+      <details>
+        <summary>Are siblings given priority?</summary>
+        <div class="a"><p>Yes. Siblings of enrolled children are placed ahead of the general waitlist, and a sibling discount applies from the second child.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="tour" id="tour">
   <div class="shell tour-grid">
     <div class="rv">
-      <p class="eyebrow">Visit us</p>
-      <h2>Schedule a visit.</h2>
-      <p class="lede" style="margin-top:20px">Tours are arranged upon schedule. Tell us a little about your family and we'll find a morning that works.</p>
+      <p class="eyebrow">Now taking names</p>
+      <h2>Join the waitlist.</h2>
+      <p class="lede" style="margin-top:20px">We open in March 2027. Families on the waitlist are placed first, hear rates before anyone else, and are invited to walk the space once it is safe to do so.</p>
+      <div class="offer">
+        <h3>Founding families</h3>
+        <ul>
+          <li>Priority placement by room, in the order families join</li>
+          <li>First look at rates, ahead of general enrolment</li>
+          <li>First invitations to walk the space before opening</li>
+          <li>Sibling priority for any future child</li>
+        </ul>
+      </div>
       <p class="small">Prefer to email? Write to <a href="mailto:hello@kindredbk.nyc" style="color:var(--clay);font-weight:600">hello@kindredbk.nyc</a>.</p>
     </div>
     <div class="form rv">
@@ -562,12 +731,12 @@ document.addEventListener('error', function (e) {
           <select id="fa"><option>3–12 months</option><option>1–2 years</option><option>2–3 years</option><option>3 years – pre-K</option><option>Not yet born</option></select>
         </div>
         <div class="field">
-          <label for="fl">Preferred site</label>
-          <select id="fl"><option>Greenpoint — 79 Quay St</option><option>Park Slope — coming soon</option><option>Either</option></select>
+          <label for="fl">Preferred start</label>
+          <select id="fl"><option>March 2027 (opening)</option><option>Spring 2027</option><option>Summer 2027</option><option>Autumn 2027</option><option>Not sure yet</option></select>
         </div>
       </div>
-      <button class="btn btn-clay" id="submitBtn" style="width:100%">Request a tour</button>
-      <p class="note-line">We reply within one business day. No mailing list, no follow-up sequence.</p>
+      <button class="btn btn-clay" id="submitBtn" style="width:100%">Join the waitlist</button>
+      <p class="note-line">We reply within one business day. We use your details only to contact you about a place at Kindred — never sold, never shared. See our <a href="privacy.html" style="color:var(--clay);font-weight:600">privacy notice</a>.</p>
       <div class="ok" id="ok"></div>
     </div>
   </div>
@@ -601,8 +770,9 @@ document.addEventListener('error', function (e) {
         <a href="#values">Our approach</a>
         <a href="#rooms">Rooms and ages</a>
         <a href="#inside">The space</a>
+      <a href="#faq">Questions</a>
       <a href="#day">A day here</a>
-        <a href="#tour">Book a tour</a>
+        <a href="#tour">Join the waitlist</a>
       </div>
       <div>
         <h4>Contact</h4>
@@ -612,9 +782,19 @@ document.addEventListener('error', function (e) {
     </div>
     <div class="fbot">
       <span>© 2026 Kindred · <a href="https://www.google.com/maps/search/?api=1&query=79+Quay+Street+Brooklyn+NY+11222" target="_blank" rel="noopener" style="color:inherit;display:inline;padding:0">79 Quay Street, Brooklyn NY 11222</a></span>
+      <span class="flegal">
+        <a href="privacy.html">Privacy</a>
+        <a href="privacy.html#terms">Terms of use</a>
+        <a href="privacy.html#accessibility">Accessibility</a>
+      </span>
     </div>
   </div>
 </footer>
+
+<div id="cookie" role="region" aria-label="Privacy notice">
+  <p>This site keeps one small item in your browser to remember that you have seen this notice. Nothing else is stored and nothing is shared. <a href="privacy.html">Read more</a>.</p>
+  <button id="cookieOk" type="button">Got it</button>
+</div>
 
 <script>
 (function(){
@@ -668,6 +848,16 @@ document.addEventListener('error', function (e) {
     if(e.key==='ArrowLeft') show(idx-1);
     if(e.key==='ArrowRight') show(idx+1);
   });
+
+  // privacy notice
+  try{
+    var ck=document.getElementById('cookie');
+    if(!localStorage.getItem('kindred-notice')){ setTimeout(function(){ck.classList.add('show');},900); }
+    document.getElementById('cookieOk').addEventListener('click',function(){
+      ck.classList.remove('show');
+      try{ localStorage.setItem('kindred-notice','1'); }catch(e){}
+    });
+  }catch(e){}
 
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduce&&'IntersectionObserver' in window){
