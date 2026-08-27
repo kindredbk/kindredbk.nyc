@@ -117,7 +117,7 @@ section{padding:100px 0;scroll-margin-top:100px}
 /* rooms */
 .rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .room{border-radius:var(--arch-card);overflow:hidden;display:flex;flex-direction:column}
-.room-img{aspect-ratio:1.16;overflow:hidden}
+.room-img{height:210px;overflow:hidden}
 .room-img img{width:100%;height:100%;object-fit:cover;display:block}
 .room-body{padding:26px 26px 30px}
 .room .age{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;opacity:.75;line-height:1.5}
@@ -130,9 +130,9 @@ section{padding:100px 0;scroll-margin-top:100px}
 
 .ggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .gcell{margin:0}
-.gcell img{width:100%;aspect-ratio:1.16;object-fit:cover;border-radius:var(--arch-card);display:block}
-.gcell img{cursor:zoom-in;transition:opacity .2s ease}
-.gcell img:hover{opacity:.88}
+.gcell img{width:100%;height:210px;object-fit:cover;border-radius:var(--arch-card);display:block}
+.gcell img,.room-img img{cursor:zoom-in;transition:opacity .2s ease}
+.gcell img:hover,.room-img img:hover{opacity:.88}
 #lb{
   position:fixed;inset:0;z-index:200;background:rgba(36,31,27,.93);
   display:none;align-items:center;justify-content:center;padding:36px;
@@ -238,7 +238,7 @@ footer p:last-child{margin-bottom:0}
 @media (max-width:960px){
   .hero-grid,.story,.tour-grid{grid-template-columns:1fr;gap:48px}
   .vgrid,.rgrid,.ggrid{grid-template-columns:1fr 1fr}
-  .room-img,.gcell img{aspect-ratio:1.35}
+  .room-img,.gcell img{height:180px}
   .tl{grid-template-columns:1fr 1fr;gap:0 34px}
   .tl-item{border-left:none;border-top:1px solid rgba(246,240,228,.24);padding:22px 0}
   .tl-item:first-child{padding-top:22px;border-top:1px solid rgba(246,240,228,.24)}
@@ -256,13 +256,12 @@ footer p:last-child{margin-bottom:0}
   .shell{padding:0 22px}
   .vgrid,.fgrid,.frow{grid-template-columns:1fr}
   .rgrid{grid-template-columns:1fr 1fr;gap:14px}
-  .room-img{aspect-ratio:1.5}
   .room h3{font-size:20px}
   .room .age{font-size:9.5px}
   .room p{font-size:13px;line-height:1.55}
   .room-body{padding:18px 16px 20px}
   .ggrid{grid-template-columns:1fr 1fr;gap:14px}
-  .gcell img{aspect-ratio:1.5}
+  .room-img,.gcell img{height:132px}
   .tl{grid-template-columns:1fr}
   .hero{padding:52px 0 64px}
   .room-body{padding:24px 22px 26px}
@@ -415,7 +414,7 @@ document.addEventListener('error', function (e) {
     </div>
     <div class="rgrid rv">
       <div class="room r-nest">
-        <div class="room-img"><img loading="lazy" width="620" height="539" decoding="async" src="room-nest.webp" alt=""></div>
+        <div class="room-img"><img loading="lazy" decoding="async" src="room-nest.webp" alt=""></div>
         <div class="room-body">
         <div class="age">3–12 months</div>
         <h3>The Nest</h3>
@@ -423,7 +422,7 @@ document.addEventListener('error', function (e) {
         </div>
       </div>
       <div class="room r-grove">
-        <div class="room-img"><img loading="lazy" width="620" height="539" decoding="async" src="room-grove.webp" alt=""></div>
+        <div class="room-img"><img loading="lazy" decoding="async" src="room-grove.webp" alt=""></div>
         <div class="room-body">
         <div class="age">1–2 years</div>
         <h3>The Grove</h3>
@@ -431,7 +430,7 @@ document.addEventListener('error', function (e) {
         </div>
       </div>
       <div class="room r-meadow">
-        <div class="room-img"><img loading="lazy" width="620" height="539" decoding="async" src="room-meadow.webp" alt=""></div>
+        <div class="room-img"><img loading="lazy" decoding="async" src="room-meadow.webp" alt=""></div>
         <div class="room-body">
         <div class="age">2–3 years</div>
         <h3>The Meadow</h3>
@@ -439,7 +438,7 @@ document.addEventListener('error', function (e) {
         </div>
       </div>
       <div class="room r-work">
-        <div class="room-img"><img loading="lazy" width="620" height="539" decoding="async" src="room-workshop.webp" alt=""></div>
+        <div class="room-img"><img loading="lazy" decoding="async" src="room-workshop.webp" alt=""></div>
         <div class="room-body">
         <div class="age">3 years – pre-K</div>
         <h3>The Workshop</h3>
@@ -458,10 +457,10 @@ document.addEventListener('error', function (e) {
       <p class="lede">Wood baffle ceilings, greenery, terrazzo and soft colour throughout.</p>
     </div>
     <div class="ggrid rv">
-      <figure class="gcell"><img loading="lazy" width="1500" height="1000" decoding="async" src="g1.webp" alt="Infant room with soft play flooring and changing area"><figcaption>Infant room</figcaption></figure>
-      <figure class="gcell"><img loading="lazy" width="1500" height="1000" decoding="async" src="g2.webp" alt="Toddler room with climbing tree and reading nook"><figcaption>Toddler room</figcaption></figure>
-      <figure class="gcell"><img loading="lazy" width="1500" height="1000" decoding="async" src="g3.webp" alt="Staff lounge with kitchen and banquette seating"><figcaption>Staff lounge</figcaption></figure>
-      <figure class="gcell"><img loading="lazy" width="1500" height="1000" decoding="async" src="g4.webp" alt="Reception and hallway"><figcaption>Reception</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" decoding="async" src="g1.webp" alt="Infant room with soft play flooring and changing area"><figcaption>Infant room</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" decoding="async" src="g2.webp" alt="Toddler room with climbing tree and reading nook"><figcaption>Toddler room</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" decoding="async" src="g3.webp" alt="Staff lounge with kitchen and banquette seating"><figcaption>Staff lounge</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" decoding="async" src="g4.webp" alt="Reception and hallway"><figcaption>Reception</figcaption></figure>
     </div>
   </div>
 </section>
@@ -639,19 +638,26 @@ document.addEventListener('error', function (e) {
   });
   // enlarge gallery photos
   var lb=document.getElementById('lb'), lbImg=lb.querySelector('img'), lbCap=lb.querySelector('.cap');
-  var figs=[].slice.call(document.querySelectorAll('.gcell')), idx=0;
+  var shots=[].slice.call(document.querySelectorAll('.room-img img, .gcell img')), idx=0;
+  function capFor(im){
+    var fig=im.closest('.gcell');
+    if(fig){ var fc=fig.querySelector('figcaption'); return fc?fc.textContent:''; }
+    var card=im.closest('.room');
+    if(card){
+      var h=card.querySelector('h3'), a=card.querySelector('.age');
+      return h ? h.textContent + (a ? ' · ' + a.textContent : '') : '';
+    }
+    return im.alt||'';
+  }
   function show(i){
-    idx=(i+figs.length)%figs.length;
-    var im=figs[idx].querySelector('img'), cap=figs[idx].querySelector('figcaption');
-    lbImg.src=im.getAttribute('src'); lbImg.alt=im.alt||'';
-    lbCap.textContent=cap?cap.textContent:'';
+    idx=(i+shots.length)%shots.length;
+    lbImg.src=shots[idx].getAttribute('src');
+    lbImg.alt=shots[idx].alt||'';
+    lbCap.textContent=capFor(shots[idx]);
     lb.classList.add('open'); document.body.style.overflow='hidden';
   }
   function hide(){ lb.classList.remove('open'); document.body.style.overflow=''; lbImg.src=''; }
-  figs.forEach(function(fig,i){
-    var im=fig.querySelector('img');
-    im.addEventListener('click',function(){show(i);});
-  });
+  shots.forEach(function(im,i){ im.addEventListener('click',function(){show(i);}); });
   lb.querySelector('.close').addEventListener('click',hide);
   lb.querySelector('.prev').addEventListener('click',function(e){e.stopPropagation();show(idx-1);});
   lb.querySelector('.next').addEventListener('click',function(e){e.stopPropagation();show(idx+1);});
