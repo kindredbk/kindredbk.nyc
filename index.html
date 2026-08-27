@@ -252,6 +252,16 @@ footer p:last-child{margin-bottom:0}
   *{transition:none!important}
 }
 </style>
+<script>
+// Images may sit at the repo root or inside images/ — try the other location once on failure.
+document.addEventListener('error', function (e) {
+  var el = e.target;
+  if (el.tagName !== 'IMG' || el.dataset.retry) return;
+  el.dataset.retry = '1';
+  var src = el.getAttribute('src');
+  el.setAttribute('src', src.indexOf('images/') === 0 ? src.slice(7) : 'images/' + src);
+}, true);
+</script>
 </head>
 <body>
 
