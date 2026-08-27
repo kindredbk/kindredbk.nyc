@@ -131,6 +131,33 @@ section{padding:100px 0;scroll-margin-top:100px}
 .ggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:880px;margin:0 auto}
 .gcell{margin:0}
 .gcell img{width:100%;aspect-ratio:1.4;object-fit:cover;border-radius:54px 54px 10px 10px;display:block}
+.gcell img{cursor:zoom-in;transition:opacity .2s ease}
+.gcell img:hover{opacity:.88}
+#lb{
+  position:fixed;inset:0;z-index:200;background:rgba(36,31,27,.93);
+  display:none;align-items:center;justify-content:center;padding:36px;
+}
+#lb.open{display:flex}
+#lb img{max-width:min(1200px,92vw);max-height:82vh;border-radius:14px;display:block;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+#lb .cap{
+  position:absolute;bottom:26px;left:0;right:0;text-align:center;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(246,240,228,.75);
+}
+#lb button{
+  position:absolute;background:rgba(246,240,228,.12);border:none;color:var(--linen);
+  width:48px;height:48px;border-radius:999px;cursor:pointer;font-size:22px;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:background .2s ease;
+}
+#lb button:hover{background:rgba(246,240,228,.24)}
+#lb .close{top:22px;right:22px}
+#lb .prev{left:22px;top:50%;transform:translateY(-50%)}
+#lb .next{right:22px;top:50%;transform:translateY(-50%)}
+@media (max-width:600px){
+  #lb{padding:16px}
+  #lb .prev{left:8px}
+  #lb .next{right:8px}
+  #lb button{width:42px;height:42px}
+}
 .gcell figcaption{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:rgba(42,39,33,.5);margin-top:10px;text-align:center}
 
 /* day */
@@ -431,10 +458,10 @@ document.addEventListener('error', function (e) {
       <p class="lede">Wood baffle ceilings, greenery, terrazzo and soft colour throughout.</p>
     </div>
     <div class="ggrid rv">
-      <figure class="gcell"><img loading="lazy" width="560" height="683" decoding="async" src="g1.webp" alt="Infant room with soft play flooring and changing area"><figcaption>Infant room</figcaption></figure>
-      <figure class="gcell"><img loading="lazy" width="560" height="683" decoding="async" src="g2.webp" alt="Toddler room with climbing tree and reading nook"><figcaption>Toddler room</figcaption></figure>
-      <figure class="gcell"><img loading="lazy" width="560" height="683" decoding="async" src="g3.webp" alt="Staff lounge with kitchen and banquette seating"><figcaption>Staff lounge</figcaption></figure>
-      <figure class="gcell"><img loading="lazy" width="560" height="683" decoding="async" src="g4.webp" alt="Reception and hallway"><figcaption>Reception</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" width="1500" height="1000" decoding="async" src="g1.webp" alt="Infant room with soft play flooring and changing area"><figcaption>Infant room</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" width="1500" height="1000" decoding="async" src="g2.webp" alt="Toddler room with climbing tree and reading nook"><figcaption>Toddler room</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" width="1500" height="1000" decoding="async" src="g3.webp" alt="Staff lounge with kitchen and banquette seating"><figcaption>Staff lounge</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" width="1500" height="1000" decoding="async" src="g4.webp" alt="Reception and hallway"><figcaption>Reception</figcaption></figure>
     </div>
   </div>
 </section>
@@ -549,6 +576,14 @@ document.addEventListener('error', function (e) {
 
 </main>
 
+<div id="lb" role="dialog" aria-modal="true" aria-label="Enlarged photo">
+  <button class="close" aria-label="Close">&#10005;</button>
+  <button class="prev" aria-label="Previous">&#8249;</button>
+  <button class="next" aria-label="Next">&#8250;</button>
+  <img alt="">
+  <div class="cap"></div>
+</div>
+
 <footer>
   <div class="shell">
     <div class="fgrid">
@@ -602,6 +637,32 @@ document.addEventListener('error', function (e) {
     ok.textContent="Thank you — we'll be in touch within one business day to confirm a morning.";
     ok.style.background='#7C8A5F';ok.classList.add('show');
   });
+  // enlarge gallery photos
+  var lb=document.getElementById('lb'), lbImg=lb.querySelector('img'), lbCap=lb.querySelector('.cap');
+  var figs=[].slice.call(document.querySelectorAll('.gcell')), idx=0;
+  function show(i){
+    idx=(i+figs.length)%figs.length;
+    var im=figs[idx].querySelector('img'), cap=figs[idx].querySelector('figcaption');
+    lbImg.src=im.getAttribute('src'); lbImg.alt=im.alt||'';
+    lbCap.textContent=cap?cap.textContent:'';
+    lb.classList.add('open'); document.body.style.overflow='hidden';
+  }
+  function hide(){ lb.classList.remove('open'); document.body.style.overflow=''; lbImg.src=''; }
+  figs.forEach(function(fig,i){
+    var im=fig.querySelector('img');
+    im.addEventListener('click',function(){show(i);});
+  });
+  lb.querySelector('.close').addEventListener('click',hide);
+  lb.querySelector('.prev').addEventListener('click',function(e){e.stopPropagation();show(idx-1);});
+  lb.querySelector('.next').addEventListener('click',function(e){e.stopPropagation();show(idx+1);});
+  lb.addEventListener('click',function(e){ if(e.target===lb) hide(); });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') hide();
+    if(e.key==='ArrowLeft') show(idx-1);
+    if(e.key==='ArrowRight') show(idx+1);
+  });
+
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduce&&'IntersectionObserver' in window){
     var io=new IntersectionObserver(function(es){
