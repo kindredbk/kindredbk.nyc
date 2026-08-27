@@ -168,7 +168,7 @@ section{padding:100px 0;scroll-margin-top:100px}
 .tl-item{padding:4px 26px;border-left:1px solid rgba(246,240,228,.24)}
 .tl-item:first-child{border-left:none;padding-left:0}
 .tl-item:last-child{padding-right:0}
-.tl-item .dot{width:13px;height:13px;border-radius:999px 999px 2px 2px;background:var(--sand);margin-bottom:18px}
+.tl-item .clock{width:26px;height:26px;color:var(--sand);margin-bottom:16px;display:block}
 .tl-item .time{font-family:var(--display);font-size:19px;color:#fff;margin-bottom:9px;line-height:1.2}
 .tl-item .what{font-size:14px;line-height:1.6;color:rgba(246,240,228,.82)}
 
@@ -472,11 +472,11 @@ document.addEventListener('error', function (e) {
       <h2>A typical day.</h2>
     </div>
     <div class="tl rv">
-      <div class="tl-item"><div class="dot"></div><div class="time">7:30</div><div class="what">Doors open. Slow arrivals, breakfast for anyone who wants it.</div></div>
-      <div class="tl-item"><div class="dot"></div><div class="time">9:00</div><div class="what">Morning circle, then open play across the room's stations.</div></div>
-      <div class="tl-item"><div class="dot"></div><div class="time">11:00</div><div class="what">Outside — the yard, or a walk to the park in the stroller train.</div></div>
-      <div class="tl-item"><div class="dot"></div><div class="time">12:30</div><div class="what">Lunch together at the low tables, then nap and quiet time.</div></div>
-      <div class="tl-item"><div class="dot"></div><div class="time">3:30</div><div class="what">Snack, project time, and unhurried pickup through to six.</div></div>
+      <div class="tl-item"><svg class="clock" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="10.2" stroke="currentColor" stroke-width="1.6"/><path d="M13 13 L9.6 16.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M13 13 L13.0 20.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><div class="time">7:30</div><div class="what">Doors open. Slow arrivals, breakfast for anyone who wants it.</div></div>
+      <div class="tl-item"><svg class="clock" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="10.2" stroke="currentColor" stroke-width="1.6"/><path d="M13 13 L8.2 13.0" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M13 13 L13.0 5.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><div class="time">9:00</div><div class="what">Morning circle, then open play across the room's stations.</div></div>
+      <div class="tl-item"><svg class="clock" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="10.2" stroke="currentColor" stroke-width="1.6"/><path d="M13 13 L10.6 8.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M13 13 L13.0 5.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><div class="time">11:00</div><div class="what">Outside — the yard, or a walk to the park in the stroller train.</div></div>
+      <div class="tl-item"><svg class="clock" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="10.2" stroke="currentColor" stroke-width="1.6"/><path d="M13 13 L14.2 8.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M13 13 L13.0 20.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><div class="time">12:30</div><div class="what">Lunch together at the low tables, then nap and quiet time.</div></div>
+      <div class="tl-item"><svg class="clock" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="10.2" stroke="currentColor" stroke-width="1.6"/><path d="M13 13 L17.6 14.2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M13 13 L13.0 20.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><div class="time">3:30</div><div class="what">Snack, project time, and unhurried pickup through to six.</div></div>
     </div>
   </div>
 </section>
@@ -496,7 +496,7 @@ document.addEventListener('error', function (e) {
         </div>
         <div class="loc-body">
           <div class="hood">Greenpoint</div>
-          <h3>79 Quay Street</h3>
+          <h3><a href="https://www.google.com/maps/search/?api=1&query=79+Quay+Street+Brooklyn+NY+11222" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(42,39,33,.25)">79 Quay Street</a></h3>
           <p class="small" style="margin:10px 0 0">Brooklyn, NY 11222 — steps from the waterfront and the India Street ferry.</p>
           <dl>
             <dt>Opening</dt><dd>March 2027</dd>
@@ -592,7 +592,7 @@ document.addEventListener('error', function (e) {
       </div>
       <div>
         <h4>Visit</h4>
-        <p>79 Quay Street<br>Greenpoint, Brooklyn NY 11222</p>
+        <p><a href="https://www.google.com/maps/search/?api=1&query=79+Quay+Street+Brooklyn+NY+11222" target="_blank" rel="noopener" style="display:inline;padding:0">79 Quay Street<br>Greenpoint, Brooklyn NY 11222</a></p>
         <p>Park Slope<br>Coming soon</p>
       </div>
       <div>
@@ -611,7 +611,7 @@ document.addEventListener('error', function (e) {
       </div>
     </div>
     <div class="fbot">
-      <span>© 2026 Kindred · 79 Quay Street, Brooklyn NY 11222</span>
+      <span>© 2026 Kindred · <a href="https://www.google.com/maps/search/?api=1&query=79+Quay+Street+Brooklyn+NY+11222" target="_blank" rel="noopener" style="color:inherit;display:inline;padding:0">79 Quay Street, Brooklyn NY 11222</a></span>
     </div>
   </div>
 </footer>
