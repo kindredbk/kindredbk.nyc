@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kindred — Greenpoint, Brooklyn</title>
 <meta name="description" content="Kindred is a warm, nurturing early childhood centre in Greenpoint, Brooklyn. Small rooms, steady teachers, ages 3 months through pre-K. A Park Slope site is coming soon.">
-<link rel="icon" href="images/favicon.png" type="image/png">
-<meta property="og:title" content="Kindred — Daycare &amp; Preschool in Greenpoint, Brooklyn">
-<meta property="og:description" content="A daycare and preschool at 79 Quay Street in Greenpoint, Brooklyn. Ages three months through pre-K, Monday to Friday. Tours by appointment.">
-<meta property="og:image" content="https://kindredbk.nyc/images/hero.webp">
-<meta property="og:url" content="https://kindredbk.nyc/">
-<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -152,11 +146,11 @@ section{padding:100px 0;scroll-margin-top:100px}
 .tl-item .what{font-size:14px;line-height:1.6;color:rgba(246,240,228,.82)}
 
 /* locations */
-.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch}
 .loc{border:1px solid var(--rule);border-radius:var(--arch-card);overflow:hidden;background:var(--paper);display:flex;flex-direction:column}
-.loc-img{aspect-ratio:1.4;overflow:hidden;background:var(--sand);position:relative}
+.loc-img{aspect-ratio:1.45;overflow:hidden;background:var(--sand);position:relative}
 .loc-panel{
-  aspect-ratio:1.5;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  aspect-ratio:1.45;display:flex;flex-direction:column;align-items:center;justify-content:center;
   gap:10px;position:relative;padding:26px;text-align:center;
 }
 .loc-panel img{width:min(148px,44%);height:auto}
@@ -169,6 +163,7 @@ section{padding:100px 0;scroll-margin-top:100px}
   padding:8px 14px;border-radius:999px;line-height:1.4;
 }
 .loc-body{padding:34px 32px 36px;display:flex;flex-direction:column;flex:1}
+.loc-body dl{margin-top:auto;padding-top:22px}
 .loc h3{font-size:26px;margin-bottom:8px}
 .loc .hood{font-size:10.5px;letter-spacing:.19em;text-transform:uppercase;font-weight:700;color:var(--clay);margin-bottom:16px;line-height:1.5}
 .loc dl{margin:22px 0 0;display:grid;grid-template-columns:auto 1fr;gap:12px 22px;font-size:14.5px;line-height:1.55}
@@ -216,6 +211,7 @@ footer p:last-child{margin-bottom:0}
 @media (max-width:960px){
   .hero-grid,.story,.tour-grid{grid-template-columns:1fr;gap:48px}
   .vgrid,.rgrid,.ggrid{grid-template-columns:1fr 1fr}
+  .room-img{aspect-ratio:1.35}
   .tl{grid-template-columns:1fr 1fr;gap:0 34px}
   .tl-item{border-left:none;border-top:1px solid rgba(246,240,228,.24);padding:22px 0}
   .tl-item:first-child{padding-top:22px;border-top:1px solid rgba(246,240,228,.24)}
@@ -231,7 +227,13 @@ footer p:last-child{margin-bottom:0}
 @media (max-width:600px){
   body{font-size:16px}
   .shell{padding:0 22px}
-  .vgrid,.rgrid,.fgrid,.frow{grid-template-columns:1fr}
+  .vgrid,.fgrid,.frow{grid-template-columns:1fr}
+  .rgrid{grid-template-columns:1fr 1fr;gap:14px}
+  .room-img{aspect-ratio:1.5}
+  .room h3{font-size:20px}
+  .room .age{font-size:9.5px}
+  .room p{font-size:13px;line-height:1.55}
+  .room-body{padding:18px 16px 20px}
   .ggrid{grid-template-columns:1fr 1fr;gap:14px}
   .tl{grid-template-columns:1fr}
   .hero{padding:52px 0 64px}
@@ -256,7 +258,7 @@ footer p:last-child{margin-bottom:0}
 <header>
   <div class="shell bar">
     <a class="brand" href="#top">
-      <img src="images/logo-mark.png" alt="">
+      <img src="logo-mark.png" alt="">
       <span><span class="wm">KINDRED</span><span class="sub">Daycare &amp; Preschool</span></span>
     </a>
     <nav class="links" id="nav">
@@ -277,7 +279,7 @@ footer p:last-child{margin-bottom:0}
 <section class="hero">
   <div class="shell hero-grid">
     <div>
-      <p class="eyebrow">Now enrolling</p>
+      <p class="eyebrow">Opening March 2027</p>
       <h1>Rooted in curiosity.<br>Growing together.</h1>
       <p class="lede">A warm, nurturing space in Greenpoint where children feel seen, supported and inspired to grow — from three months through pre-K.</p>
       <div class="hero-cta">
@@ -290,9 +292,9 @@ footer p:last-child{margin-bottom:0}
         </div>
     </div>
     <div class="hero-art">
-      <div class="hero-arch"><img width="900" height="1047" decoding="async" src="images/hero.webp" alt="A bright Kindred classroom with arched windows, wooden shelving and soft green seating"></div>
+      <div class="hero-arch"><img width="900" height="1047" decoding="async" src="hero.webp" alt="A bright Kindred classroom with arched windows, wooden shelving and soft green seating"></div>
       <div class="badge">
-        <img src="images/logo-mark.png" alt="">
+        <img src="logo-mark.png" alt="">
         <div class="t">Est. Brooklyn</div>
       </div>
     </div>
@@ -314,7 +316,7 @@ footer p:last-child{margin-bottom:0}
       <p>We believe early childhood is a time of wonder, connection and discovery. Our approach blends play, purpose and attention to help every child grow with confidence and joy.</p>
       <p>Rooms are calm, bright and unhurried. Children move at their own pace, with familiar faces around them and space to explore, rest and come back to what interests them.</p>
     </div>
-    <div class="story-art"><img loading="lazy" width="820" height="892" decoding="async" src="images/story.webp" alt="A Kindred classroom corner with an arched alcove, low wooden tables and natural light"></div>
+    <div class="story-art"><img loading="lazy" width="820" height="892" decoding="async" src="story.webp" alt="A Kindred classroom corner with an arched alcove, low wooden tables and natural light"></div>
   </div>
 </section>
 
@@ -375,7 +377,7 @@ footer p:last-child{margin-bottom:0}
     </div>
     <div class="rgrid rv">
       <div class="room r-nest">
-        <div class="room-img"><img loading="lazy" width="620" height="539" decoding="async" src="images/room-nest.webp" alt=""></div>
+        <div class="room-img"><img loading="lazy" width="620" height="539" decoding="async" src="room-nest.webp" alt=""></div>
         <div class="room-body">
         <div class="age">3–12 months</div>
         <h3>The Nest</h3>
@@ -383,7 +385,7 @@ footer p:last-child{margin-bottom:0}
         </div>
       </div>
       <div class="room r-grove">
-        <div class="room-img"><img loading="lazy" width="620" height="539" decoding="async" src="images/room-grove.webp" alt=""></div>
+        <div class="room-img"><img loading="lazy" width="620" height="539" decoding="async" src="room-grove.webp" alt=""></div>
         <div class="room-body">
         <div class="age">1–2 years</div>
         <h3>The Grove</h3>
@@ -391,7 +393,7 @@ footer p:last-child{margin-bottom:0}
         </div>
       </div>
       <div class="room r-meadow">
-        <div class="room-img"><img loading="lazy" width="620" height="539" decoding="async" src="images/room-meadow.webp" alt=""></div>
+        <div class="room-img"><img loading="lazy" width="620" height="539" decoding="async" src="room-meadow.webp" alt=""></div>
         <div class="room-body">
         <div class="age">2–3 years</div>
         <h3>The Meadow</h3>
@@ -399,7 +401,7 @@ footer p:last-child{margin-bottom:0}
         </div>
       </div>
       <div class="room r-work">
-        <div class="room-img"><img loading="lazy" width="620" height="539" decoding="async" src="images/room-workshop.webp" alt=""></div>
+        <div class="room-img"><img loading="lazy" width="620" height="539" decoding="async" src="room-workshop.webp" alt=""></div>
         <div class="room-body">
         <div class="age">3 years – pre-K</div>
         <h3>The Workshop</h3>
@@ -415,13 +417,13 @@ footer p:last-child{margin-bottom:0}
     <div class="section-head rv">
       <p class="eyebrow">A look inside</p>
       <h2>The space at 79 Quay Street.</h2>
-      <p class="lede">Interior design by Eli Cisner Studio. Wood baffle ceilings, greenery, terrazzo and soft colour throughout.</p>
+      <p class="lede">Wood baffle ceilings, greenery, terrazzo and soft colour throughout.</p>
     </div>
     <div class="ggrid rv">
-      <figure class="gcell"><img loading="lazy" width="560" height="683" decoding="async" src="images/g1.webp" alt="Infant room with soft play flooring and changing area"><figcaption>Infant room</figcaption></figure>
-      <figure class="gcell"><img loading="lazy" width="560" height="683" decoding="async" src="images/g2.webp" alt="Toddler room with climbing tree and reading nook"><figcaption>Toddler room</figcaption></figure>
-      <figure class="gcell"><img loading="lazy" width="560" height="683" decoding="async" src="images/g3.webp" alt="Staff lounge with kitchen and banquette seating"><figcaption>Staff lounge</figcaption></figure>
-      <figure class="gcell"><img loading="lazy" width="560" height="683" decoding="async" src="images/g4.webp" alt="Reception and hallway"><figcaption>Reception</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" width="560" height="683" decoding="async" src="g1.webp" alt="Infant room with soft play flooring and changing area"><figcaption>Infant room</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" width="560" height="683" decoding="async" src="g2.webp" alt="Toddler room with climbing tree and reading nook"><figcaption>Toddler room</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" width="560" height="683" decoding="async" src="g3.webp" alt="Staff lounge with kitchen and banquette seating"><figcaption>Staff lounge</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" width="560" height="683" decoding="async" src="g4.webp" alt="Reception and hallway"><figcaption>Reception</figcaption></figure>
     </div>
   </div>
 </section>
@@ -446,17 +448,21 @@ footer p:last-child{margin-bottom:0}
   <div class="shell">
     <div class="section-head rv">
       <p class="eyebrow">Visit</p>
-      <h2>Open in Greenpoint. Park Slope next.</h2>
+      <h2>Greenpoint first. Park Slope next.</h2>
       <p class="lede">Both sites share the same rooms, the same approach and the same room names. A family moving across Brooklyn moves from the Meadow to the Meadow.</p>
     </div>
     <div class="lgrid rv">
       <div class="loc">
-        <div class="loc-img"><img loading="lazy" width="760" height="543" decoding="async" src="images/loc-greenpoint.webp" alt="Preschool classroom at 79 Quay Street"></div>
+        <div class="loc-img">
+          <img loading="lazy" width="760" height="543" decoding="async" src="loc-greenpoint.webp" alt="Preschool classroom at 79 Quay Street">
+          <span class="soon">Opening March 2027</span>
+        </div>
         <div class="loc-body">
-          <div class="hood">Greenpoint · Now open</div>
+          <div class="hood">Greenpoint</div>
           <h3>79 Quay Street</h3>
           <p class="small" style="margin:10px 0 0">Brooklyn, NY 11222 — steps from the waterfront and the India Street ferry.</p>
           <dl>
+            <dt>Opening</dt><dd>March 2027</dd>
             <dt>Hours</dt><dd>Monday to Friday, 7:30am – 6:00pm</dd>
             <dt>Ages</dt><dd>3 months through pre-K</dd>
             <dt>Tours</dt><dd>By appointment</dd>
@@ -465,7 +471,7 @@ footer p:last-child{margin-bottom:0}
       </div>
       <div class="loc">
         <div class="loc-panel" style="background:var(--sand)">
-          <img src="images/logo-nodesc.png" alt="Kindred" style="opacity:.55">
+          <img src="logo-nodesc.png" alt="Kindred" style="opacity:.55">
           <span class="soon">Coming soon</span>
         </div>
         <div class="loc-body">
@@ -487,7 +493,7 @@ footer p:last-child{margin-bottom:0}
   <div class="shell pgrid rv">
     <div class="pcard">
       <h3>Licensing</h3>
-      <p>Greenpoint is licensed by New York State OCFS. Our permit and inspection history are posted at reception and available on request.</p>
+      <p>The Greenpoint center will operate under a New York State OCFS permit. Our permit and inspection history will be posted at reception and available on request.</p>
     </div>
     <div class="pcard">
       <h3>Food</h3>
@@ -506,7 +512,7 @@ footer p:last-child{margin-bottom:0}
       <p class="eyebrow">Visit us</p>
       <h2>Schedule a visit.</h2>
       <p class="lede" style="margin-top:20px">Tours are arranged upon schedule. Tell us a little about your family and we'll find a morning that works.</p>
-      <p class="small">Prefer to talk first? Call <a href="tel:+17185550137" style="color:var(--clay);font-weight:600">(718) 555-0137</a> or email <a href="mailto:hello@kindredbk.nyc" style="color:var(--clay);font-weight:600">hello@kindredbk.nyc</a>.</p>
+      <p class="small">Prefer to email? Write to <a href="mailto:hello@kindredbk.nyc" style="color:var(--clay);font-weight:600">hello@kindredbk.nyc</a>.</p>
     </div>
     <div class="form rv">
       <div class="frow">
@@ -536,7 +542,7 @@ footer p:last-child{margin-bottom:0}
   <div class="shell">
     <div class="fgrid">
       <div>
-        <div class="fmark"><img src="images/logo-nodesc.png" alt="Kindred"></div>
+        <div class="fmark"><img src="logo-nodesc.png" alt="Kindred"></div>
         <p style="max-width:30ch">Rooted in curiosity. Growing together.</p>
       </div>
       <div>
@@ -555,14 +561,12 @@ footer p:last-child{margin-bottom:0}
       </div>
       <div>
         <h4>Contact</h4>
-        <a href="tel:+17185550137">(718) 555-0137</a>
         <a href="mailto:hello@kindredbk.nyc">hello@kindredbk.nyc</a>
         <p style="margin-top:16px">Monday to Friday<br>7:30am – 6:00pm</p>
       </div>
     </div>
     <div class="fbot">
-      <span>© 2026 Kindred LLC · Licensed by NYS OCFS</span>
-      <span>Placeholder phone, email and licence details — replace before launch.</span>
+      <span>© 2026 Kindred · 79 Quay Street, Brooklyn NY 11222</span>
     </div>
   </div>
 </footer>
@@ -584,11 +588,8 @@ footer p:last-child{margin-bottom:0}
       ok.textContent='Add your name and a valid email so we can reply.';
       ok.style.background='#B4553A';ok.classList.add('show');return;
     }
-    var age=document.getElementById('fa').value, loc=document.getElementById('fl').value;
-    var body='Name: '+n+'%0D%0AEmail: '+e+'%0D%0AChild\'s age at start: '+age+'%0D%0APreferred site: '+loc;
-    ok.textContent="Opening your email app to send the request. If nothing happens, email hello@kindredbk.nyc directly.";
+    ok.textContent="Thank you — we'll be in touch within one business day to confirm a morning.";
     ok.style.background='#7C8A5F';ok.classList.add('show');
-    window.location.href='mailto:hello@kindredbk.nyc?subject=Tour%20request%20-%20'+encodeURIComponent(n)+'&body='+body;
   });
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduce&&'IntersectionObserver' in window){
