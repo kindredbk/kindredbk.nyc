@@ -128,10 +128,10 @@ section{padding:100px 0;scroll-margin-top:100px}
 .r-meadow{background:var(--sand)}
 .r-work{background:var(--clay);color:#fff}
 
-.ggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.ggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:880px;margin:0 auto}
 .gcell{margin:0}
-.gcell img{width:100%;aspect-ratio:.82;object-fit:cover;border-radius:var(--arch-card);display:block}
-.gcell figcaption{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(42,39,33,.55);margin-top:14px;text-align:center}
+.gcell img{width:100%;aspect-ratio:1.4;object-fit:cover;border-radius:54px 54px 10px 10px;display:block}
+.gcell figcaption{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:rgba(42,39,33,.5);margin-top:10px;text-align:center}
 
 /* day */
 .day{background:var(--sage);color:var(--linen)}
@@ -234,7 +234,8 @@ footer p:last-child{margin-bottom:0}
   .room .age{font-size:9.5px}
   .room p{font-size:13px;line-height:1.55}
   .room-body{padding:18px 16px 20px}
-  .ggrid{grid-template-columns:1fr 1fr;gap:14px}
+  .ggrid{grid-template-columns:1fr 1fr;gap:12px;max-width:none}
+  .gcell img{border-radius:40px 40px 8px 8px}
   .tl{grid-template-columns:1fr}
   .hero{padding:52px 0 64px}
   .room-body{padding:24px 22px 26px}
