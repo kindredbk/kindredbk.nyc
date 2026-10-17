@@ -379,8 +379,32 @@ nav.links a.here{color:var(--sage);border-color:var(--olive)}
 .cross{background:var(--linen)}
 .cross-in{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
 .cross h2{margin-bottom:14px}
-.cross-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.cross-thumbs img{width:100%;height:150px;object-fit:cover;border-radius:70px 70px 10px 10px;display:block}
+.cross-one img{width:100%;height:240px;object-fit:cover;border-radius:var(--arch-card);display:block}
+.ccap{display:block;text-align:center;margin-top:12px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(42,39,33,.5)}
+.cross-solo{max-width:62ch}
+.cross-solo .lede{margin-bottom:26px}
+
+/* highlights grid */
+.hl{display:grid;grid-template-columns:repeat(4,1fr);gap:30px 26px}
+.hlitem{display:flex;gap:14px;align-items:flex-start}
+.hlitem svg{width:30px;height:30px;flex:none;margin-top:1px}
+.hlitem .t{font-family:var(--display);font-size:16px;line-height:1.3;margin-bottom:5px}
+.hlitem .d{font-size:13.5px;line-height:1.55;color:var(--muted)}
+
+/* approach */
+.ap{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.apcard{border-top:2px solid var(--olive);padding-top:24px}
+.apcard .n{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--clay);margin-bottom:12px}
+.apcard h3{margin-bottom:10px;font-size:20px}
+.apcard p{font-size:14.5px;line-height:1.7;color:var(--muted);margin:0}
+.apnote{margin-top:44px;padding-top:26px;border-top:1px solid var(--rule);max-width:70ch}
+.apnote p{font-size:15px;line-height:1.7;color:var(--muted);margin:0}
+
+/* social */
+.fsocial{display:flex;gap:14px;margin-top:18px}
+.fsocial a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:999px;border:1px solid rgba(246,240,228,.3);padding:0}
+.fsocial a:hover{background:rgba(246,240,228,.14)}
+.fsocial svg{width:17px;height:17px}
 
 /* expectation cards */
 .exp{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
@@ -400,7 +424,10 @@ nav.links a.navcta{display:none}
 @media (max-width:960px){
   nav.links a.navcta{display:block;color:var(--clay);font-weight:700}
   .cross-in{grid-template-columns:1fr;gap:34px}
+  .cross-one img{height:190px}
   .exp{grid-template-columns:1fr}
+  .hl{grid-template-columns:1fr 1fr;gap:26px 22px}
+  .ap{grid-template-columns:1fr;gap:26px}
   .qbar-in{grid-template-columns:1fr 1fr;gap:22px}
   .lhero .hero-arch{aspect-ratio:1.5}
 }
@@ -409,6 +436,7 @@ nav.links a.navcta{display:none}
 }
 @media (max-width:600px){
   .qbar-in{grid-template-columns:1fr;gap:18px}
+  .hl{grid-template-columns:1fr;gap:22px}
   .cross-thumbs img{height:110px}
 }
 </style>
@@ -440,6 +468,7 @@ document.addEventListener('error', function (e) {
     </a>
     <nav class="links" id="nav">
       <a href="index.html#story">Our story</a>
+      <a href="index.html#approach">Approach</a>
       <a href="index.html#rooms">Rooms</a>
       <a href="greenpoint.html">Greenpoint</a>
       <a href="park-slope.html" class="here">Park Slope</a>
@@ -508,16 +537,12 @@ document.addEventListener('error', function (e) {
 </section>
 
 <section class="cross">
-  <div class="shell cross-in rv">
-    <div>
-      <p class="eyebrow">See it first</p>
-      <h2>What Kindred looks like.</h2>
-      <p class="lede" style="margin-bottom:22px">Greenpoint opens in March 2027 and shows the design language Park Slope will share — arched alcoves, wood ceilings, natural light and soft colour throughout.</p>
-      <a href="greenpoint.html" class="btn btn-ghost">Explore Greenpoint</a>
-    </div>
-    <div class="cross-thumbs">
-      <img loading="lazy" decoding="async" src="g1.webp" alt="Infant room at Kindred Greenpoint">
-      <img loading="lazy" decoding="async" src="g4.webp" alt="Reception at Kindred Greenpoint">
+  <div class="shell">
+    <div class="cross-solo rv">
+      <p class="eyebrow">Also from Kindred</p>
+      <h2>Greenpoint opens first.</h2>
+      <p class="lede">Our Greenpoint centre at 79 Quay Street opens in March 2027. It is a separate location with its own rooms and its own waitlist — worth a look if you want to see the design language Park Slope will share.</p>
+      <a href="greenpoint.html" class="btn btn-ghost" style="margin-top:8px">Explore Greenpoint</a>
     </div>
   </div>
 </section>
@@ -526,7 +551,7 @@ document.addEventListener('error', function (e) {
   <div class="shell pgrid rv">
     <div class="pcard">
       <h3>Where it will be</h3>
-      <p>A ground-floor corner space on 4th Avenue, shown above. We will publish the full address here once everything is signed off; families on the interest list hear first.</p>
+      <p>A ground-floor corner space on 4th Avenue, shown in the photograph at the top of this page. We will publish the full address once everything is signed off; families on the interest list hear first.</p>
     </div>
     <div class="pcard">
       <h3>When it will open</h3>
@@ -601,7 +626,7 @@ document.addEventListener('error', function (e) {
       <div>
         <h4>Explore</h4>
         <a href="index.html#story">Our story</a>
-        <a href="index.html#values">Our approach</a>
+        <a href="index.html#approach">How we teach</a>
         <a href="index.html#rooms">Rooms and ages</a>
         <a href="index.html#day">A day here</a>
         <a href="index.html#faq">Questions</a>
@@ -610,6 +635,14 @@ document.addEventListener('error', function (e) {
         <h4>Contact</h4>
         <a href="mailto:hello@kindredbk.nyc">hello@kindredbk.nyc</a>
         <p style="margin-top:16px">Monday to Friday<br>7:30am – 6:00pm</p>
+        <div class="fsocial">
+          <a href="https://www.instagram.com/kindredbk" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>
+          </a>
+          <a href="mailto:hello@kindredbk.nyc" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5" width="19" height="14" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
       </div>
     </div>
     <div class="fbot">

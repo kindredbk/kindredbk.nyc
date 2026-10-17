@@ -379,8 +379,32 @@ nav.links a.here{color:var(--sage);border-color:var(--olive)}
 .cross{background:var(--linen)}
 .cross-in{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
 .cross h2{margin-bottom:14px}
-.cross-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.cross-thumbs img{width:100%;height:150px;object-fit:cover;border-radius:70px 70px 10px 10px;display:block}
+.cross-one img{width:100%;height:240px;object-fit:cover;border-radius:var(--arch-card);display:block}
+.ccap{display:block;text-align:center;margin-top:12px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(42,39,33,.5)}
+.cross-solo{max-width:62ch}
+.cross-solo .lede{margin-bottom:26px}
+
+/* highlights grid */
+.hl{display:grid;grid-template-columns:repeat(4,1fr);gap:30px 26px}
+.hlitem{display:flex;gap:14px;align-items:flex-start}
+.hlitem svg{width:30px;height:30px;flex:none;margin-top:1px}
+.hlitem .t{font-family:var(--display);font-size:16px;line-height:1.3;margin-bottom:5px}
+.hlitem .d{font-size:13.5px;line-height:1.55;color:var(--muted)}
+
+/* approach */
+.ap{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+.apcard{border-top:2px solid var(--olive);padding-top:24px}
+.apcard .n{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--clay);margin-bottom:12px}
+.apcard h3{margin-bottom:10px;font-size:20px}
+.apcard p{font-size:14.5px;line-height:1.7;color:var(--muted);margin:0}
+.apnote{margin-top:44px;padding-top:26px;border-top:1px solid var(--rule);max-width:70ch}
+.apnote p{font-size:15px;line-height:1.7;color:var(--muted);margin:0}
+
+/* social */
+.fsocial{display:flex;gap:14px;margin-top:18px}
+.fsocial a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:999px;border:1px solid rgba(246,240,228,.3);padding:0}
+.fsocial a:hover{background:rgba(246,240,228,.14)}
+.fsocial svg{width:17px;height:17px}
 
 /* expectation cards */
 .exp{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
@@ -400,7 +424,10 @@ nav.links a.navcta{display:none}
 @media (max-width:960px){
   nav.links a.navcta{display:block;color:var(--clay);font-weight:700}
   .cross-in{grid-template-columns:1fr;gap:34px}
+  .cross-one img{height:190px}
   .exp{grid-template-columns:1fr}
+  .hl{grid-template-columns:1fr 1fr;gap:26px 22px}
+  .ap{grid-template-columns:1fr;gap:26px}
   .qbar-in{grid-template-columns:1fr 1fr;gap:22px}
   .lhero .hero-arch{aspect-ratio:1.5}
 }
@@ -409,6 +436,7 @@ nav.links a.navcta{display:none}
 }
 @media (max-width:600px){
   .qbar-in{grid-template-columns:1fr;gap:18px}
+  .hl{grid-template-columns:1fr;gap:22px}
   .cross-thumbs img{height:110px}
 }
 </style>
@@ -444,6 +472,7 @@ document.addEventListener('error', function (e) {
     </a>
     <nav class="links" id="nav">
       <a href="#story">Our story</a>
+      <a href="#approach">Approach</a>
       <a href="#rooms">Rooms</a>
       <a href="greenpoint.html">Greenpoint</a>
       <a href="park-slope.html">Park Slope</a>
@@ -550,6 +579,36 @@ document.addEventListener('error', function (e) {
   </div>
 </section>
 
+
+<section id="approach">
+  <div class="shell">
+    <div class="section-head rv">
+      <p class="eyebrow">How we teach</p>
+      <h2>Play, with intent behind it.</h2>
+      <p class="lede">We are play-based and child-led. That is not the same as unstructured — the structure sits in the room and the routine rather than in a lesson plan.</p>
+    </div>
+    <div class="ap rv">
+      <div class="apcard">
+        <div class="n">01</div>
+        <h3>The room teaches</h3>
+        <p>Materials sit at child height, in view, in the same places every day. A child who can see what is available and reach it without asking makes a hundred small decisions a morning. That is the work.</p>
+      </div>
+      <div class="apcard">
+        <div class="n">02</div>
+        <h3>We follow the interest</h3>
+        <p>Teachers watch what a group is drawn to and build on it, so a fascination with water or wheels or a crack in the pavement can run for weeks rather than being cut short by a timetable.</p>
+      </div>
+      <div class="apcard">
+        <div class="n">03</div>
+        <h3>The day is predictable</h3>
+        <p>The same rhythm, the same faces, the same order every day. Children who know what comes next spend their energy on playing rather than on working out what is happening.</p>
+      </div>
+    </div>
+    <div class="apnote rv">
+      <p>We do not run a trademarked method or license a curriculum. If you have toured centres that describe themselves as Reggio-inspired or Montessori-inspired, much of this will be familiar — we have taken what works for this age and left the branding alone.</p>
+    </div>
+  </div>
+</section>
 <section id="rooms">
   <div class="shell">
     <div class="section-head rv">
@@ -785,7 +844,7 @@ document.addEventListener('error', function (e) {
       <div>
         <h4>Explore</h4>
         <a href="#story">Our story</a>
-        <a href="#values">Our approach</a>
+        <a href="#approach">How we teach</a>
         <a href="#rooms">Rooms and ages</a>
         <a href="#day">A day here</a>
         <a href="#faq">Questions</a>
@@ -794,6 +853,14 @@ document.addEventListener('error', function (e) {
         <h4>Contact</h4>
         <a href="mailto:hello@kindredbk.nyc">hello@kindredbk.nyc</a>
         <p style="margin-top:16px">Monday to Friday<br>7:30am – 6:00pm</p>
+        <div class="fsocial">
+          <a href="https://www.instagram.com/kindredbk" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor"/></svg>
+          </a>
+          <a href="mailto:hello@kindredbk.nyc" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2.5" y="5" width="19" height="14" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
       </div>
     </div>
     <div class="fbot">
