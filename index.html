@@ -3,8 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kindred — Greenpoint, Brooklyn</title>
-<meta name="description" content="Kindred is a warm, nurturing early childhood centre in Greenpoint, Brooklyn. Small rooms, steady teachers, ages 3 months through pre-K. A Park Slope site is coming soon.">
+<title>Kindred — Daycare &amp; Preschool in Brooklyn</title>
+<meta name="description" content="Kindred is a daycare and preschool in Brooklyn for ages three months through pre-K. Greenpoint opens March 2027; a Park Slope site is in development.">
+<link rel="canonical" href="https://kindredbk.nyc/">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta property="og:title" content="Kindred — Daycare &amp; Preschool in Brooklyn">
+<meta property="og:description" content="Kindred is a daycare and preschool in Brooklyn for ages three months through pre-K. Greenpoint opens March 2027; a Park Slope site is in development.">
+<meta property="og:image" content="https://kindredbk.nyc/hero.webp">
+<meta property="og:url" content="https://kindredbk.nyc/">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -347,7 +354,75 @@ footer p:last-child{margin-bottom:0}
   .rv{opacity:1;transform:none}
   *{transition:none!important}
 }
+
+/* ---- multi-page additions ---- */
+nav.links a.here{color:var(--sage);border-color:var(--olive)}
+.loc-cta{margin-top:24px;padding-top:22px;border-top:1px solid var(--rule)}
+.loc-cta a{
+  display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  font-weight:700;font-size:14.5px;color:var(--clay);
+}
+.loc-cta a:hover{color:#9C462E}
+.loc-body dl{margin-top:auto;padding-top:22px}
+
+/* location hero */
+.lhero{padding:66px 0 78px}
+.lhero .hero-arch{aspect-ratio:1.35;border-radius:var(--arch-card)}
+.lhero .hero-art{padding-bottom:0}
+.hero-arch.plate img{width:auto;height:auto;object-fit:contain}
+.hero-arch.plate{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;padding:40px;background:var(--sand)}
+.crumb{font-size:12.5px;letter-spacing:.02em;color:var(--muted);margin:0 0 22px}
+.crumb a{color:var(--clay);text-decoration:none;font-weight:600}
+.crumb a:hover{text-decoration:underline}
+
+/* cross link band */
+.cross{background:var(--linen)}
+.cross-in{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+.cross h2{margin-bottom:14px}
+.cross-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cross-thumbs img{width:100%;height:150px;object-fit:cover;border-radius:70px 70px 10px 10px;display:block}
+
+/* expectation cards */
+.exp{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.expcard{background:var(--paper);border:1px solid var(--rule);border-radius:var(--arch-card);padding:46px 28px 32px;text-align:center}
+.expcard .n{font-family:var(--display);font-size:15px;color:var(--clay);margin-bottom:14px;letter-spacing:.04em}
+.expcard h3{margin-bottom:10px;font-size:19px}
+.expcard p{font-size:14.5px;line-height:1.65;color:var(--muted);margin:0}
+
+/* quick detail bar */
+.qbar{background:var(--sand);padding:26px 0}
+.qbar-in{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.qbar .k{font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--clay);margin-bottom:7px;line-height:1.5}
+.qbar .v{font-family:var(--display);font-size:17px;line-height:1.35;color:var(--ink)}
+.qbar .v a{color:inherit}
+
+nav.links a.navcta{display:none}
+@media (max-width:960px){
+  nav.links a.navcta{display:block;color:var(--clay);font-weight:700}
+  .cross-in{grid-template-columns:1fr;gap:34px}
+  .exp{grid-template-columns:1fr}
+  .qbar-in{grid-template-columns:1fr 1fr;gap:22px}
+  .lhero .hero-arch{aspect-ratio:1.5}
+}
+@media (max-width:620px){
+  .bar > a.btn-clay{display:none}
+}
+@media (max-width:600px){
+  .qbar-in{grid-template-columns:1fr;gap:18px}
+  .cross-thumbs img{height:110px}
+}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Kindred",
+"alternateName":"Kindred Daycare & Preschool","url":"https://kindredbk.nyc/",
+"email":"hello@kindredbk.nyc","areaServed":"Brooklyn, New York",
+"logo":"https://kindredbk.nyc/logo-nodesc.png",
+"location":[
+ {"@type":"ChildCare","name":"Kindred Greenpoint","url":"https://kindredbk.nyc/greenpoint.html",
+  "address":{"@type":"PostalAddress","streetAddress":"79 Quay Street","addressLocality":"Brooklyn","addressRegion":"NY","postalCode":"11222","addressCountry":"US"}},
+ {"@type":"ChildCare","name":"Kindred Park Slope","url":"https://kindredbk.nyc/park-slope.html",
+  "address":{"@type":"PostalAddress","addressLocality":"Brooklyn","addressRegion":"NY","addressCountry":"US"}}]}
+</script>
 <script>
 // Images may sit at the repo root or inside images/ — try the other location once on failure.
 document.addEventListener('error', function (e) {
@@ -369,12 +444,11 @@ document.addEventListener('error', function (e) {
     </a>
     <nav class="links" id="nav">
       <a href="#story">Our story</a>
-      <a href="#values">Approach</a>
       <a href="#rooms">Rooms</a>
-      <a href="#inside">The space</a>
+      <a href="greenpoint.html">Greenpoint</a>
+      <a href="park-slope.html">Park Slope</a>
       <a href="#faq">Questions</a>
-      <a href="#day">A day here</a>
-      <a href="#locations">Visit</a>
+      <a href="#tour" class="navcta">Join the waitlist</a>
     </nav>
     <a href="#tour" class="btn btn-clay" style="padding:12px 22px">Join the waitlist</a>
     <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -386,17 +460,18 @@ document.addEventListener('error', function (e) {
 <section class="hero">
   <div class="shell hero-grid">
     <div>
-      <p class="eyebrow">Opening March 2027</p>
+      <p class="eyebrow">Two Brooklyn locations</p>
       <h1>Rooted in curiosity.<br>Growing together.</h1>
-      <p class="lede">A warm, nurturing space in Greenpoint where children feel seen, supported and inspired to grow — from three months through pre-K.</p>
+      <p class="lede">A warm, nurturing space in Brooklyn where children feel seen, supported and inspired to grow — from three months through pre-K.</p>
       <div class="hero-cta">
         <a href="#tour" class="btn btn-clay">Join the waitlist</a>
-        <a href="#rooms" class="btn btn-ghost">See our rooms</a>
+        <a href="#locations" class="btn btn-ghost">See our locations</a>
       </div>
       <div class="hero-facts">
         <div class="fact"><div class="n">3 mo – 5 yr</div><div class="l">Ages</div></div>
-        <div class="fact"><div class="n">Greenpoint</div><div class="l">79 Quay Street</div></div>
-        </div>
+        <div class="fact"><div class="n">Two sites</div><div class="l">Greenpoint &amp; Park Slope</div></div>
+        <div class="fact"><div class="n">March 2027</div><div class="l">First opening</div></div>
+      </div>
     </div>
     <div class="hero-art">
       <div class="hero-arch"><img width="900" height="1047" decoding="async" src="hero.webp" alt="A bright Kindred classroom with arched windows, wooden shelving and soft green seating"></div>
@@ -413,7 +488,6 @@ document.addEventListener('error', function (e) {
     <span class="kw">Natural</span><span class="kw">Warm</span><span class="kw">Nurturing</span><span class="kw">Connected</span><span class="kw">Playful</span><span class="kw">Welcoming</span><span class="kw">Timeless</span>
   </div>
 </div>
-
 <section id="story">
   <div class="shell story rv">
     <div>
@@ -519,22 +593,6 @@ document.addEventListener('error', function (e) {
   </div>
 </section>
 
-<section id="inside" style="padding-top:0">
-  <div class="shell">
-    <div class="section-head rv">
-      <p class="eyebrow">A look inside</p>
-      <h2>The space at 79 Quay Street.</h2>
-      <p class="lede">Wood baffle ceilings, greenery, terrazzo and soft colour throughout.</p>
-    </div>
-    <div class="ggrid rv">
-      <figure class="gcell"><img loading="lazy" decoding="async" src="g1.webp" alt="Infant room with soft play flooring and changing area"><figcaption>Infant room</figcaption></figure>
-      <figure class="gcell"><img loading="lazy" decoding="async" src="g2.webp" alt="Toddler room with climbing tree and reading nook"><figcaption>Toddler room</figcaption></figure>
-      <figure class="gcell"><img loading="lazy" decoding="async" src="g3.webp" alt="Staff lounge with kitchen and banquette seating"><figcaption>Staff lounge</figcaption></figure>
-      <figure class="gcell"><img loading="lazy" decoding="async" src="g4.webp" alt="Reception and hallway"><figcaption>Reception</figcaption></figure>
-    </div>
-  </div>
-</section>
-
 <section class="day" id="day">
   <div class="shell">
     <div class="section-head rv">
@@ -551,84 +609,46 @@ document.addEventListener('error', function (e) {
   </div>
 </section>
 
-<section id="neighbourhood">
-  <div class="shell hood-grid rv">
-    <div>
-      <p class="eyebrow">The neighbourhood</p>
-      <h2>On the Greenpoint waterfront.</h2>
-      <p class="lede" style="margin-bottom:10px">79 Quay Street sits on the corner of West Street, a few minutes from the ferry and the park.</p>
-      <div class="walk">
-        <div><span class="t">2 min</span><span class="p">Newtown Barge Park</span></div>
-        <div><span class="t">4 min</span><span class="p">India Street ferry to Midtown and Wall Street</span></div>
-        <div><span class="t">6 min</span><span class="p">WNYC Transmitter Park</span></div>
-        <div><span class="t">9 min</span><span class="p">Greenpoint Avenue G train</span></div>
-        <div><span class="t">12 min</span><span class="p">Nassau Avenue G train</span></div>
-      </div>
-      <a class="btn btn-ghost" style="margin-top:26px" href="https://www.google.com/maps/search/?api=1&query=79+Quay+Street+Brooklyn+NY+11222" target="_blank" rel="noopener">Open in Maps</a>
-    </div>
-    <div class="archbox-map" style="border-radius:var(--arch-card);overflow:hidden;background:var(--sand)">
-      <img loading="lazy" width="1500" height="1000" decoding="async" loading="lazy" decoding="async" src="g4.webp" alt="Reception and hallway at 79 Quay Street" style="width:100%;height:340px;object-fit:cover;display:block">
-    </div>
-  </div>
-</section>
-
-<section class="prog" id="progress">
-  <div class="shell">
-    <div class="section-head rv">
-      <p class="eyebrow">Follow the build</p>
-      <h2>Where we are.</h2>
-      <p class="lede">We'll update this page as the space comes together. Edit the dates and statuses as milestones land.</p>
-    </div>
-    <div class="steps rv">
-      <div class="step done"><div class="mark"></div><div class="when">Complete</div><div class="what">Space secured</div><div class="note">Ground floor at 79 Quay Street.</div></div>
-      <div class="step done"><div class="mark"></div><div class="when">Complete</div><div class="what">Interior design</div><div class="note">Layout, materials and finishes set.</div></div>
-      <div class="step"><div class="mark"></div><div class="when">In progress</div><div class="what">Filings and permits</div><div class="note">DOB and agency approvals.</div></div>
-      <div class="step"><div class="mark"></div><div class="when">Next</div><div class="what">Construction</div><div class="note">Build-out of both floors.</div></div>
-      <div class="step"><div class="mark"></div><div class="when">Next</div><div class="what">Licensing</div><div class="note">OCFS inspection and permit.</div></div>
-      <div class="step"><div class="mark"></div><div class="when">March 2027</div><div class="what">Doors open</div><div class="note">First families start.</div></div>
-    </div>
-  </div>
-</section>
 
 <section id="locations">
   <div class="shell">
     <div class="section-head rv">
-      <p class="eyebrow">Visit</p>
-      <h2>Greenpoint first. Park Slope next.</h2>
+      <p class="eyebrow">Our locations</p>
+      <h2>Two doors, one school.</h2>
       <p class="lede">Both sites share the same rooms, the same approach and the same room names. A family moving across Brooklyn moves from the Meadow to the Meadow.</p>
     </div>
     <div class="lgrid rv">
       <div class="loc">
         <div class="loc-img">
-          <img loading="lazy" width="760" height="543" decoding="async" src="loc-greenpoint.webp" alt="Preschool classroom at 79 Quay Street">
+          <img loading="lazy" width="760" height="543" decoding="async" src="loc-greenpoint.webp" alt="Preschool classroom at Kindred Greenpoint">
           <span class="soon">Opening March 2027</span>
         </div>
         <div class="loc-body">
           <div class="hood">Greenpoint</div>
-          <h3><a href="https://www.google.com/maps/search/?api=1&query=79+Quay+Street+Brooklyn+NY+11222" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(42,39,33,.25)">79 Quay Street</a></h3>
-          <p class="small" style="margin:10px 0 0">Brooklyn, NY 11222 — steps from the waterfront and the India Street ferry.</p>
+          <h3>79 Quay Street</h3>
+          <p class="small" style="margin:10px 0 0">Brooklyn, NY 11222 — on the corner of West Street, steps from the waterfront and the India Street ferry.</p>
           <dl>
             <dt>Opening</dt><dd>March 2027</dd>
             <dt>Hours</dt><dd>Monday to Friday, 7:30am – 6:00pm</dd>
             <dt>Ages</dt><dd>3 months through pre-K</dd>
-            <dt>Tours</dt><dd>By appointment</dd>
           </dl>
+          <div class="loc-cta"><a href="greenpoint.html">Explore Greenpoint &#8594;</a></div>
         </div>
       </div>
       <div class="loc">
-        <div class="loc-panel" style="background:var(--sand)">
-          <img src="logo-nodesc.png" alt="Kindred" style="opacity:.55">
-          <span class="soon">Coming soon</span>
+        <div class="loc-img">
+          <img loading="lazy" width="1309" height="633" decoding="async" src="ps-building.webp" alt="The Park Slope corner where Kindred's second location will open">
+          <span class="soon">In development</span>
         </div>
         <div class="loc-body">
           <div class="hood">Park Slope</div>
-          <h3>Coming soon</h3>
-          <p class="small" style="margin:10px 0 0">Our second Brooklyn site is in development. Join the interest list and you'll hear before enrolment opens.</p>
+          <h3>Our second site</h3>
+          <p class="small" style="margin:10px 0 0">A ground-floor corner space on 4th Avenue, in development with the same rooms and the same approach. Join the interest list and you will hear before enrolment opens.</p>
           <dl>
             <dt>Opening</dt><dd>Date to be announced</dd>
             <dt>Ages</dt><dd>3 months through pre-K</dd>
-            <dt>Waitlist</dt><dd><a href="#tour" style="color:var(--clay);font-weight:600;text-decoration:none">Add your family</a></dd>
           </dl>
+          <div class="loc-cta"><a href="park-slope.html">About Park Slope &#8594;</a></div>
         </div>
       </div>
     </div>
@@ -639,19 +659,18 @@ document.addEventListener('error', function (e) {
   <div class="shell pgrid rv">
     <div class="pcard">
       <h3>Licensing</h3>
-      <p>The Greenpoint center will operate under a New York State OCFS permit. Our permit and inspection history will be posted at reception and available on request.</p>
+      <p>Every Kindred centre operates under a New York State OCFS permit. Each site's permit and inspection history is posted at reception and available on request.</p>
     </div>
     <div class="pcard">
       <h3>Food</h3>
-      <p>Meals are delivered daily by our food provider and prepped on site. We are a nut-free building and accommodate allergies and dietary requirements.</p>
+      <p>Meals are delivered daily by our food provider and prepped on site. Our buildings are nut-free and we accommodate allergies and dietary requirements.</p>
     </div>
     <div class="pcard">
       <h3>Enrolment</h3>
-      <p>Rolling admissions with a waitlist by room. Tuition is billed monthly; a deposit holds your place from your chosen start date.</p>
+      <p>Rolling admissions with a waitlist by room at each location. Tuition is billed monthly; a deposit holds your place from your chosen start date.</p>
     </div>
   </div>
 </section>
-
 <section id="faq" style="padding-top:0">
   <div class="shell">
     <div class="section-head rv">
@@ -703,12 +722,13 @@ document.addEventListener('error', function (e) {
   </div>
 </section>
 
+
 <section class="tour" id="tour">
   <div class="shell tour-grid">
     <div class="rv">
       <p class="eyebrow">Now taking names</p>
       <h2>Join the waitlist.</h2>
-      <p class="lede" style="margin-top:20px">We open in March 2027. Families on the waitlist are placed first, hear rates before anyone else, and are invited to walk the space once it is safe to do so.</p>
+      <p class="lede" style="margin-top:20px">Greenpoint opens in March 2027 and Park Slope follows. Families on the waitlist are placed first, hear rates before anyone else, and are invited to walk the space once it is safe to do so.</p>
       <div class="offer">
         <h3>Founding families</h3>
         <ul>
@@ -730,11 +750,9 @@ document.addEventListener('error', function (e) {
           <label for="fa">Child's age at start</label>
           <select id="fa"><option>3–12 months</option><option>1–2 years</option><option>2–3 years</option><option>3 years – pre-K</option><option>Not yet born</option></select>
         </div>
-        <div class="field">
-          <label for="fl">Preferred start</label>
-          <select id="fl"><option>March 2027 (opening)</option><option>Spring 2027</option><option>Summer 2027</option><option>Autumn 2027</option><option>Not sure yet</option></select>
-        </div>
+        <div class="field"><label for="floc">Preferred location</label><select id="floc"><option>Greenpoint — 79 Quay St</option><option>Park Slope — in development</option><option>Either location</option></select></div>
       </div>
+      <div class="frow"><div class="field"><label for="fl">Preferred start</label><select id="fl"><option>March 2027 (opening)</option><option>Spring 2027</option><option>Summer 2027</option><option>Autumn 2027</option><option>Not sure yet</option></select></div><div></div></div>
       <button class="btn btn-clay" id="submitBtn" style="width:100%">Join the waitlist</button>
       <p class="note-line">We reply within one business day. We use your details only to contact you about a place at Kindred — never sold, never shared. See our <a href="privacy.html" style="color:var(--clay);font-weight:600">privacy notice</a>.</p>
       <div class="ok" id="ok"></div>
@@ -760,19 +778,17 @@ document.addEventListener('error', function (e) {
         <p style="max-width:30ch">Rooted in curiosity. Growing together.</p>
       </div>
       <div>
-        <h4>Visit</h4>
-        <p><a href="https://www.google.com/maps/search/?api=1&query=79+Quay+Street+Brooklyn+NY+11222" target="_blank" rel="noopener" style="display:inline;padding:0">79 Quay Street<br>Greenpoint, Brooklyn NY 11222</a></p>
-        <p>Park Slope<br>Coming soon</p>
+        <h4>Locations</h4>
+        <a href="greenpoint.html">Greenpoint — 79 Quay Street</a>
+        <a href="park-slope.html">Park Slope — in development</a>
       </div>
       <div>
         <h4>Explore</h4>
         <a href="#story">Our story</a>
         <a href="#values">Our approach</a>
         <a href="#rooms">Rooms and ages</a>
-        <a href="#inside">The space</a>
-      <a href="#faq">Questions</a>
-      <a href="#day">A day here</a>
-        <a href="#tour">Join the waitlist</a>
+        <a href="#day">A day here</a>
+        <a href="#faq">Questions</a>
       </div>
       <div>
         <h4>Contact</h4>
@@ -797,6 +813,7 @@ document.addEventListener('error', function (e) {
 </div>
 
 <script>
+
 (function(){
   var btn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
   btn.addEventListener('click',function(){
@@ -827,7 +844,9 @@ document.addEventListener('error', function (e) {
     var n=document.getElementById('fn').value.trim(),
         e=document.getElementById('fe').value.trim(),
         age=document.getElementById('fa').value,
-        start=document.getElementById('fl').value;
+        start=document.getElementById('fl').value,
+        locEl=document.getElementById('floc'),
+        loc=locEl ? locEl.value : 'Not specified';
 
     if(!n || e.indexOf('@')<1){ say('Add your name and a valid email so we can reply.', false); return; }
 
@@ -837,7 +856,7 @@ document.addEventListener('error', function (e) {
     if(FORM.MODE==='formspree' && FORM.FORMSPREE_ID){
       fetch('https://formspree.io/f/'+FORM.FORMSPREE_ID, {
         method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body: JSON.stringify({ name:n, email:e, child_age_at_start:age, preferred_start:start, _subject:'Kindred waitlist — '+n })
+        body: JSON.stringify({ name:n, email:e, location:loc, child_age_at_start:age, preferred_start:start, _subject:'Kindred waitlist ('+loc+') — '+n })
       }).then(function(r){
         done(r.ok, r.ok ? "Thank you — you're on the waitlist. We'll be in touch within one business day."
                         : 'Something went wrong. Please email '+FORM.EMAIL+' instead.');
@@ -854,7 +873,7 @@ document.addEventListener('error', function (e) {
             {name:'email', value:e},
             {name:'firstname', value:first},
             {name:'lastname', value:last},
-            {name:'message', value:"Child's age at start: "+age+" | Preferred start: "+start}
+            {name:'message', value:"Location: "+loc+" | Child's age at start: "+age+" | Preferred start: "+start}
           ],
           context:{ pageUri:window.location.href, pageName:document.title },
           legalConsentOptions:{ consent:{ consentToProcess:true, text:'I agree to be contacted about a place at Kindred.' } }
@@ -866,9 +885,9 @@ document.addEventListener('error', function (e) {
       return;
     }
 
-    var body='Name: '+n+'%0D%0AEmail: '+e+"%0D%0AChild's age at start: "+age+'%0D%0APreferred start: '+start;
+    var body='Name: '+n+'%0D%0AEmail: '+e+'%0D%0ALocation: '+loc+"%0D%0AChild's age at start: "+age+'%0D%0APreferred start: '+start;
     done(true, 'Opening your email app to send your details. If nothing happens, email '+FORM.EMAIL+' directly.');
-    window.location.href='mailto:'+FORM.EMAIL+'?subject=Kindred%20waitlist%20-%20'+encodeURIComponent(n)+'&body='+body;
+    window.location.href='mailto:'+FORM.EMAIL+'?subject='+encodeURIComponent('Kindred waitlist ('+loc+') - '+n)+'&body='+body;
   });
 
   // privacy notice
