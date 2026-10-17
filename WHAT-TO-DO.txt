@@ -1,0 +1,50 @@
+KINDRED — WHAT'S MISSING, WHAT'S EXTRA
+======================================
+
+MISSING (that's why it's broken)
+--------------------------------
+1. The real homepage. The index.html in your repo is still the
+   GREENPOINT page. kindredbk.nyc shows "Kindred Greenpoint."
+   The correct one is in this zip — its first heading reads
+   "Rooted in curiosity. Growing together."
+
+2. Eleven content images are not at the repo root. They are only
+   inside the images/ folder, but the pages look for them at the
+   root. All eleven are in this zip:
+       hero.webp  story.webp
+       g1.webp  g2.webp  g3.webp  g4.webp
+       room-nest.webp  room-grove.webp
+       room-meadow.webp  room-workshop.webp
+       loc-greenpoint.webp
+
+3. .nojekyll — missing. Without it GitHub runs Jekyll over the
+   site and skips any file starting with an underscore. It is in
+   this zip (it is an empty file, that is normal).
+
+UPLOAD everything in this zip to the repo ROOT, overwriting.
+There is only ONE index.html in here, so nothing can collide.
+
+
+EXTRA (delete these from the repo)
+----------------------------------
+   _director-block.html   placeholder text, publicly reachable.
+                          Keep it on your computer, not in the repo.
+   README.txt             my upload notes, no reason to be public
+   README.md              outdated, describes the old folder layout
+   download               junk file from the first upload, no
+                          extension, 2 months old
+
+OPTIONAL
+--------
+   images/   Once the eleven files above are at the root, this
+             folder is a duplicate. Leave it for now — delete it
+             only after you confirm the site renders correctly.
+
+
+AFTER UPLOADING, CHECK IN THIS ORDER
+------------------------------------
+   kindredbk.nyc/              -> "Rooted in curiosity."
+   kindredbk.nyc/greenpoint/   -> "Kindred Greenpoint."
+   kindredbk.nyc/park-slope/   -> "Kindred Park Slope."
+
+Hard-refresh with Ctrl+Shift+R. Pages takes a minute to rebuild.
