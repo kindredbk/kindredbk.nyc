@@ -1,0 +1,56 @@
+KINDRED — ROOM COLOUR SPEC
+For the window decals and every future application
+==================================================
+
+One colour per room. Four distinct colours. Identical on glass,
+on screen, and on the room doors inside the building.
+
+    THE NEST        3–12 months        Harbor    #93AFBF
+    THE GROVE       1–2 years          Olive     #7C8A5F
+    THE MEADOW      2–3 years          Honey     #E3A93F
+    THE WORKSHOP    3 years – pre-K    Clay      #B4553A
+
+
+CHANGES TO THE CURRENT DECAL ARTWORK
+------------------------------------
+Window 9  · The Grove arch      mustard  ->  OLIVE  #7C8A5F
+Window 11 · The Meadow arch     mustard  ->  no change, keep it
+Window 12 · The Workshop arch   blue     ->  CLAY   #B4553A
+Window 8  · The Nest arch       blue     ->  no change, keep it
+
+Reason: as drawn, blue is used for both the Nest and the Workshop,
+and mustard for both the Grove and the Meadow. Two rooms sharing a
+colour defeats the point — inside the building the colour is how a
+parent finds their child's room.
+
+Sand (#EADCC6) is deliberately NOT used for a room. It sits too
+close to the linen background to read on glass.
+
+
+STILL OPEN — THE WORDMARK
+-------------------------
+The decals set "Kindred" in a lowercase high-contrast serif.
+The website sets "KINDRED" in all caps in Fraunces.
+
+These are two different wordmarks for the same business, and they
+will sit on the same corner. Pick one before the vinyl is cut.
+
+If the decal wordmark wins, send the font name and the site gets
+reset to match. If the site wordmark wins, the decals need
+resetting. Either is fine; having both is not.
+
+
+REST OF THE DECAL COPY — VERIFIED CORRECT
+-----------------------------------------
+85 4th Ave, Brooklyn, NY 11217     matches the website
+Opening 2027                       matches
+Ages 3 months through pre-K        matches
+Join the interest list             matches
+kindredbk.nyc                      matches
+hello@kindredbk.nyc                matches
+Room names and age bands           match
+Tree mark                          matches
+
+QR CODES: point them at kindredbk.nyc/park-slope (no trailing
+slash) rather than the homepage. A person at that window is asking
+about Park Slope specifically. Use qr-parkslope.png.
