@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kindred — Daycare &amp; Preschool in Brooklyn</title>
-<meta name="description" content="Kindred is a daycare and preschool in Brooklyn for ages three months through pre-K. Greenpoint (79 Quay Street) opens March 2027; Park Slope (85 4th Avenue) follows in 2027.">
-<link rel="canonical" href="https://kindredbk.nyc/">
+<title>Kindred Greenpoint — Daycare &amp; Preschool, 79 Quay Street</title>
+<meta name="description" content="Kindred Greenpoint is a daycare and preschool at 79 Quay Street, Brooklyn NY 11222. Ages three months through pre-K, Monday to Friday. Opening March 2027.">
+<link rel="canonical" href="https://kindredbk.nyc/greenpoint/">
 <link rel="icon" href="favicon.png" type="image/png">
-<meta property="og:title" content="Kindred — Daycare &amp; Preschool in Brooklyn">
-<meta property="og:description" content="Kindred is a daycare and preschool in Brooklyn for ages three months through pre-K. Greenpoint (79 Quay Street) opens March 2027; Park Slope (85 4th Avenue) follows in 2027.">
+<meta property="og:title" content="Kindred Greenpoint — Daycare &amp; Preschool, 79 Quay Street">
+<meta property="og:description" content="Kindred Greenpoint is a daycare and preschool at 79 Quay Street, Brooklyn NY 11222. Ages three months through pre-K, Monday to Friday. Opening March 2027.">
 <meta property="og:image" content="https://kindredbk.nyc/hero.webp">
-<meta property="og:url" content="https://kindredbk.nyc/">
+<meta property="og:url" content="https://kindredbk.nyc/greenpoint/">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -442,15 +442,11 @@ nav.links a.navcta{display:none}
 }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Kindred",
-"alternateName":"Kindred Daycare & Preschool","url":"https://kindredbk.nyc/",
-"email":"hello@kindredbk.nyc","areaServed":"Brooklyn, New York",
-"logo":"https://kindredbk.nyc/logo-nodesc.png",
-"location":[
- {"@type":"ChildCare","name":"Kindred Greenpoint","url":"https://kindredbk.nyc/greenpoint.html",
-  "address":{"@type":"PostalAddress","streetAddress":"79 Quay Street","addressLocality":"Brooklyn","addressRegion":"NY","postalCode":"11222","addressCountry":"US"}},
- {"@type":"ChildCare","name":"Kindred Park Slope","url":"https://kindredbk.nyc/park-slope.html",
-  "address":{"@type":"PostalAddress","streetAddress":"85 4th Avenue","addressLocality":"Brooklyn","addressRegion":"NY","postalCode":"11217","addressCountry":"US"}}]}
+{"@context":"https://schema.org","@type":"ChildCare","name":"Kindred Greenpoint",
+"url":"https://kindredbk.nyc/greenpoint/","email":"hello@kindredbk.nyc",
+"image":"https://kindredbk.nyc/hero.webp","parentOrganization":{"@type":"Organization","name":"Kindred"},
+"address":{"@type":"PostalAddress","streetAddress":"79 Quay Street","addressLocality":"Brooklyn","addressRegion":"NY","postalCode":"11222","addressCountry":"US"},
+"openingHours":"Mo-Fr 07:30-18:00","areaServed":"Greenpoint, Brooklyn"}
 </script>
 <script>
 // Images may sit at the repo root or inside images/ — try the other location once on failure.
@@ -459,7 +455,7 @@ document.addEventListener('error', function (e) {
   if (el.tagName !== 'IMG' || el.dataset.retry) return;
   el.dataset.retry = '1';
   var src = el.getAttribute('src');
-  el.setAttribute('src', src.indexOf('images/') === 0 ? src.slice(7) : 'images/' + src);
+  el.setAttribute('src', src.indexOf('/images/') === 0 ? src.replace('/images/', '/') : src.replace(/^\//, '/images/'));
 }, true);
 </script>
 </head>
@@ -467,17 +463,17 @@ document.addEventListener('error', function (e) {
 
 <header>
   <div class="shell bar">
-    <a class="brand" href="#top">
-      <img src="logo-mark.png" alt="">
+    <a class="brand" href="/">
+      <img src="/logo-mark.png" alt="">
       <span><span class="wm">KINDRED</span><span class="sub">Daycare &amp; Preschool</span></span>
     </a>
     <nav class="links" id="nav">
-      <a href="#story">Our story</a>
-      <a href="#approach">Approach</a>
-      <a href="#rooms">Rooms</a>
-      <a href="greenpoint.html">Greenpoint</a>
-      <a href="park-slope.html">Park Slope</a>
-      <a href="#faq">Questions</a>
+      <a href="/#story">Our story</a>
+      <a href="/#approach">Approach</a>
+      <a href="/#rooms">Rooms</a>
+      <a href="/greenpoint/" class="here">Greenpoint</a>
+      <a href="/park-slope/">Park Slope</a>
+      <a href="/#faq">Questions</a>
       <a href="#tour" class="navcta">Join the waitlist</a>
     </nav>
     <a href="#tour" class="btn btn-clay" style="padding:12px 22px">Join the waitlist</a>
@@ -487,126 +483,65 @@ document.addEventListener('error', function (e) {
 
 <main id="top">
 
-<section class="hero">
+<section class="hero lhero">
   <div class="shell hero-grid">
     <div>
-      <p class="eyebrow">Two Brooklyn locations</p>
-      <h1>Rooted in curiosity.<br>Growing together.</h1>
-      <p class="lede">A warm, nurturing space in Brooklyn where children feel seen, supported and inspired to grow — from three months through pre-K.</p>
+      <p class="crumb"><a href="/">Kindred</a> &#8250; Greenpoint</p>
+      <p class="eyebrow">Opening March 2027</p>
+      <h1>Kindred<br>Greenpoint.</h1>
+      <p class="lede">A daycare and preschool on the ground floor at 79 Quay Street, on the corner of West Street — three months through pre-K.</p>
       <div class="hero-cta">
-        <a href="#tour" class="btn btn-clay">Join the waitlist</a>
-        <a href="#locations" class="btn btn-ghost">See our locations</a>
-      </div>
-      <div class="hero-facts">
-        <div class="fact"><div class="n">3 mo – 5 yr</div><div class="l">Ages</div></div>
-        <div class="fact"><div class="n">Two sites</div><div class="l">Greenpoint &amp; Park Slope</div></div>
-        <div class="fact"><div class="n">March 2027</div><div class="l">First opening</div></div>
+        <a href="#tour" class="btn btn-clay">Join the Greenpoint waitlist</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=79+Quay+Street+Brooklyn+NY+11222" target="_blank" rel="noopener" class="btn btn-ghost">Open in Maps</a>
       </div>
     </div>
     <div class="hero-art">
-      <div class="hero-arch"><img width="900" height="1047" decoding="async" src="hero.webp" alt="A bright Kindred classroom with arched windows, wooden shelving and soft green seating"></div>
-      <div class="badge">
-        <img src="logo-mark.png" alt="">
-        <div class="t">Est. Brooklyn</div>
-      </div>
+      <div class="hero-arch"><img width="1400" height="875" decoding="async" src="/building.webp" alt="The corner of Quay Street and West Street, showing the ground-floor storefront"></div>
     </div>
   </div>
 </section>
 
-<div class="strip">
-  <div class="shell strip-in">
-    <span class="kw">Natural</span><span class="kw">Warm</span><span class="kw">Nurturing</span><span class="kw">Connected</span><span class="kw">Playful</span><span class="kw">Welcoming</span><span class="kw">Timeless</span>
+<div class="qbar">
+  <div class="shell qbar-in">
+    <div><div class="k">Address</div><div class="v"><a href="https://www.google.com/maps/search/?api=1&query=79+Quay+Street+Brooklyn+NY+11222" target="_blank" rel="noopener">79 Quay Street<br>Brooklyn, NY 11222</a></div></div>
+    <div><div class="k">Opening</div><div class="v">March 2027</div></div>
+    <div><div class="k">Hours</div><div class="v">Mon–Fri<br>7:30am – 6:00pm</div></div>
+    <div><div class="k">Ages</div><div class="v">3 months<br>through pre-K</div></div>
   </div>
 </div>
-<section id="story">
-  <div class="shell story rv">
-    <div>
-      <p class="eyebrow">Our story</p>
-      <h2>A foundation for a bright future.</h2>
-      <p class="lede" style="margin-top:22px">Kindred is a warm, nurturing space where children feel seen, supported and inspired to grow.</p>
-      <p>We believe early childhood is a time of wonder, connection and discovery. Our approach blends play, purpose and attention to help every child grow with confidence and joy.</p>
-      <p>Rooms are calm, bright and unhurried. Children move at their own pace, with familiar faces around them and space to explore, rest and come back to what interests them.</p>
-    </div>
-    <div class="story-art"><img loading="lazy" width="820" height="892" decoding="async" src="story.webp" alt="A Kindred classroom corner with an arched alcove, low wooden tables and natural light"></div>
-  </div>
-</section>
-
-<section class="values" id="values">
+<section id="inside" >
   <div class="shell">
     <div class="section-head rv">
-      <p class="eyebrow">Our values</p>
-      <h2>What we hold to.</h2>
+      <p class="eyebrow">A look inside</p>
+      <h2>The space at 79 Quay Street.</h2>
+      <p class="lede">Wood baffle ceilings, greenery, terrazzo and soft colour throughout.</p>
     </div>
-    <div class="vgrid rv">
-      <div class="vcard">
-        <svg class="vicon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-          <path d="M32 54V28" stroke="#5E6B45" stroke-width="2.4" stroke-linecap="round"/>
-          <path d="M32 34c-9 0-15-5-15-13 8 0 15 4 15 13Z" fill="#7C8A5F" opacity=".85"/>
-          <path d="M32 28c0-9 6-15 15-15 0 9-6 15-15 15Z" fill="#5E6B45"/>
-        </svg>
-        <h3>Nurture</h3>
-        <p>We create a safe, loving environment where children feel secure enough to explore.</p>
-      </div>
-      <div class="vcard">
-        <svg class="vicon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-          <path d="M14 44h36" stroke="#B4553A" stroke-width="2.4" stroke-linecap="round"/>
-          <path d="M20 44a12 12 0 0 1 24 0Z" fill="#E3A93F" opacity=".9"/>
-          <g stroke="#B4553A" stroke-width="2.2" stroke-linecap="round">
-            <path d="M32 20v-8M18 26l-5-5M46 26l5-5M12 38H6M52 38h6"/>
-          </g>
-        </svg>
-        <h3>Grow</h3>
-        <p>We support each child's unique journey, at their own pace and in their own time.</p>
-      </div>
-      <div class="vcard">
-        <svg class="vicon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-          <circle cx="23" cy="20" r="7" fill="#93AFBF"/>
-          <circle cx="42" cy="20" r="7" fill="#EADCC6"/>
-          <path d="M12 52v-8a11 11 0 0 1 22 0v8Z" fill="#93AFBF" opacity=".75"/>
-          <path d="M31 52v-8a11 11 0 0 1 22 0v8Z" fill="#EADCC6"/>
-        </svg>
-        <h3>Connect</h3>
-        <p>We build strong relationships with children, families and our neighbourhood.</p>
-      </div>
-      <div class="vcard">
-        <svg class="vicon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-          <path d="M13 30 32 13l19 17v21a2 2 0 0 1-2 2H15a2 2 0 0 1-2-2Z" stroke="#5E6B45" stroke-width="2.4" stroke-linejoin="round"/>
-          <path d="M32 44c-5-4-8-6-8-9.5a4 4 0 0 1 8-1.6 4 4 0 0 1 8 1.6C40 38 37 40 32 44Z" fill="#B4553A"/>
-        </svg>
-        <h3>Belong</h3>
-        <p>We foster a sense of belonging where every child is valued and included.</p>
-      </div>
+    <div class="ggrid rv">
+      <figure class="gcell"><img loading="lazy" decoding="async" src="/g1.webp" alt="Infant room with soft play flooring and changing area"><figcaption>Infant room</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" decoding="async" src="/g2.webp" alt="Toddler room with climbing tree and reading nook"><figcaption>Toddler room</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" decoding="async" src="/g3.webp" alt="Staff lounge with kitchen and banquette seating"><figcaption>Staff lounge</figcaption></figure>
+      <figure class="gcell"><img loading="lazy" decoding="async" src="/g4.webp" alt="Reception and hallway"><figcaption>Reception</figcaption></figure>
     </div>
   </div>
 </section>
 
 
-<section id="approach">
+<section id="building" class="prog">
   <div class="shell">
     <div class="section-head rv">
-      <p class="eyebrow">How we teach</p>
-      <h2>Play, with intent behind it.</h2>
-      <p class="lede">We are play-based and child-led. That is not the same as unstructured — the structure sits in the room and the routine rather than in a lesson plan.</p>
+      <p class="eyebrow">In the building</p>
+      <h2>What the space is built with.</h2>
+      <p class="lede">Designed from scratch as a children's centre, not fitted into a space meant for something else.</p>
     </div>
-    <div class="ap rv">
-      <div class="apcard">
-        <div class="n">01</div>
-        <h3>The room teaches</h3>
-        <p>Materials sit at child height, in view, in the same places every day. A child who can see what is available and reach it without asking makes a hundred small decisions a morning. That is the work.</p>
-      </div>
-      <div class="apcard">
-        <div class="n">02</div>
-        <h3>We follow the interest</h3>
-        <p>Teachers watch what a group is drawn to and build on it, so a fascination with water or wheels or a crack in the pavement can run for weeks rather than being cut short by a timetable.</p>
-      </div>
-      <div class="apcard">
-        <div class="n">03</div>
-        <h3>The day is predictable</h3>
-        <p>The same rhythm, the same faces, the same order every day. Children who know what comes next spend their energy on playing rather than on working out what is happening.</p>
-      </div>
-    </div>
-    <div class="apnote rv">
-      <p>We do not run a trademarked method or license a curriculum. If you have toured centres that describe themselves as Reggio-inspired or Montessori-inspired, much of this will be familiar — we have taken what works for this age and left the branding alone.</p>
+    <div class="hl rv">
+<div class="hlitem"><svg viewBox="0 0 32 32" fill="none"><path d="M5 28V15a11 11 0 0 1 22 0v13" stroke="#5E6B45" stroke-width="2" stroke-linecap="round"/><path d="M12 28v-13a4 4 0 0 1 8 0v13" stroke="#B4553A" stroke-width="2" stroke-linecap="round"/></svg><div><div class="t">Arched play alcoves</div><div class="d">Curved openings between areas, so a room reads as a set of smaller places rather than one big hall.</div></div></div>
+<div class="hlitem"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="6" fill="#E3A93F"/><g stroke="#5E6B45" stroke-width="2" stroke-linecap="round"><path d="M16 4V1M16 31v-3M28 16h3M1 16h3M24.5 7.5l2-2M5.5 26.5l2-2M24.5 24.5l2 2M5.5 5.5l2 2"/></g></svg><div><div class="t">Full-height glazing</div><div class="d">A corner site with glass on two elevations. Every classroom gets daylight.</div></div></div>
+<div class="hlitem"><svg viewBox="0 0 32 32" fill="none"><g stroke="#5E6B45" stroke-width="2" stroke-linecap="round"><path d="M4 8h24M4 14h24M4 20h24M4 26h24"/></g><circle cx="11" cy="8" r="1.6" fill="#B4553A"/><circle cx="21" cy="20" r="1.6" fill="#B4553A"/></svg><div><div class="t">Wood baffle ceilings</div><div class="d">Slatted timber overhead, which softens sound in rooms full of small children.</div></div></div>
+<div class="hlitem"><svg viewBox="0 0 32 32" fill="none"><rect x="6" y="14" width="20" height="14" rx="3" stroke="#5E6B45" stroke-width="2"/><path d="M11 14V9a5 5 0 0 1 10 0v5" stroke="#5E6B45" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="21" r="2" fill="#B4553A"/></svg><div><div class="t">Single secure entry</div><div class="d">One controlled door, staffed through opening hours, with the reception desk facing it.</div></div></div>
+<div class="hlitem"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="11" stroke="#5E6B45" stroke-width="2"/><circle cx="16" cy="16" r="5" fill="#EADCC6" stroke="#B4553A" stroke-width="1.6"/></svg><div><div class="t">On-site prep kitchen</div><div class="d">Meals arrive daily from our food provider and are plated here. Nut-free throughout.</div></div></div>
+<div class="hlitem"><svg viewBox="0 0 32 32" fill="none"><path d="M16 28v-9" stroke="#5E6B45" stroke-width="2" stroke-linecap="round"/><path d="M7 19a9 9 0 0 1 18 0Z" fill="#7C8A5F"/><path d="M11 12a5 5 0 0 1 10 0Z" fill="#5E6B45"/></svg><div><div class="t">Greenery inside</div><div class="d">Planting through the hallway and reception, not a decorative afterthought at the door.</div></div></div>
+<div class="hlitem"><svg viewBox="0 0 32 32" fill="none"><path d="M5 7h3l2.4 10" stroke="#5E6B45" stroke-width="2" stroke-linecap="round"/><path d="M10 11h16a9 9 0 0 1-9 8h-5Z" fill="#93AFBF"/><circle cx="13" cy="25" r="2.6" stroke="#5E6B45" stroke-width="2"/><circle cx="24" cy="25" r="2.6" stroke="#5E6B45" stroke-width="2"/></svg><div><div class="t">Stroller storage</div><div class="d">Dedicated space inside the door, so drop-off does not start with a wrestling match.</div></div></div>
+<div class="hlitem"><svg viewBox="0 0 32 32" fill="none"><g stroke="#5E6B45" stroke-width="2" stroke-linecap="round"><path d="M3 11h16a4 4 0 1 0-4-4"/><path d="M3 17h21a4 4 0 1 1-4 4"/><path d="M3 23h11"/></g></svg><div><div class="t">Mechanical ventilation</div><div class="d">Fresh-air handling to each room, specified as part of the fit-out rather than added later.</div></div></div>
     </div>
   </div>
 </section>
@@ -614,11 +549,11 @@ document.addEventListener('error', function (e) {
   <div class="shell">
     <div class="section-head rv">
       <p class="eyebrow">Our rooms</p>
-      <h2>Our rooms, by age.</h2>
+      <h2>The rooms at Greenpoint.</h2>
     </div>
     <div class="rgrid rv">
       <div class="room r-nest">
-        <div class="room-img"><img loading="lazy" decoding="async" src="room-nest.webp" alt=""></div>
+        <div class="room-img"><img loading="lazy" decoding="async" src="/room-nest.webp" alt=""></div>
         <div class="room-body">
         <div class="age">3–12 months</div>
         <h3>The Nest</h3>
@@ -626,7 +561,7 @@ document.addEventListener('error', function (e) {
         </div>
       </div>
       <div class="room r-grove">
-        <div class="room-img"><img loading="lazy" decoding="async" src="room-grove.webp" alt=""></div>
+        <div class="room-img"><img loading="lazy" decoding="async" src="/room-grove.webp" alt=""></div>
         <div class="room-body">
         <div class="age">1–2 years</div>
         <h3>The Grove</h3>
@@ -634,7 +569,7 @@ document.addEventListener('error', function (e) {
         </div>
       </div>
       <div class="room r-meadow">
-        <div class="room-img"><img loading="lazy" decoding="async" src="room-meadow.webp" alt=""></div>
+        <div class="room-img"><img loading="lazy" decoding="async" src="/room-meadow.webp" alt=""></div>
         <div class="room-body">
         <div class="age">2–3 years</div>
         <h3>The Meadow</h3>
@@ -642,7 +577,7 @@ document.addEventListener('error', function (e) {
         </div>
       </div>
       <div class="room r-work">
-        <div class="room-img"><img loading="lazy" decoding="async" src="room-workshop.webp" alt=""></div>
+        <div class="room-img"><img loading="lazy" decoding="async" src="/room-workshop.webp" alt=""></div>
         <div class="room-body">
         <div class="age">3 years – pre-K</div>
         <h3>The Workshop</h3>
@@ -653,67 +588,45 @@ document.addEventListener('error', function (e) {
   </div>
 </section>
 
-<section class="day" id="day">
-  <div class="shell">
-    <div class="section-head rv">
-      <p class="eyebrow">A day here</p>
-      <h2>A typical day.</h2>
+<section id="neighbourhood">
+  <div class="shell hood-grid rv">
+    <div>
+      <p class="eyebrow">The neighbourhood</p>
+      <h2>On the Greenpoint waterfront.</h2>
+      <p class="lede" style="margin-bottom:10px">79 Quay Street sits on the corner of West Street, a few minutes from the ferry and the park.</p>
+      <div class="walk">
+        <div><span class="t">2 min</span><span class="p">Newtown Barge Park</span></div>
+        <div><span class="t">4 min</span><span class="p">India Street ferry to Midtown and Wall Street</span></div>
+        <div><span class="t">6 min</span><span class="p">WNYC Transmitter Park</span></div>
+        <div><span class="t">9 min</span><span class="p">Greenpoint Avenue G train</span></div>
+        <div><span class="t">12 min</span><span class="p">Nassau Avenue G train</span></div>
+      </div>
+      <a class="btn btn-ghost" style="margin-top:26px" href="https://www.google.com/maps/search/?api=1&query=79+Quay+Street+Brooklyn+NY+11222" target="_blank" rel="noopener">Open in Maps</a>
     </div>
-    <div class="tl rv">
-      <div class="tl-item"><svg class="clock" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="10.2" stroke="currentColor" stroke-width="1.6"/><path d="M13 13 L9.6 16.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M13 13 L13.0 20.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><div class="time">7:30</div><div class="what">Doors open. Slow arrivals, breakfast for anyone who wants it.</div></div>
-      <div class="tl-item"><svg class="clock" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="10.2" stroke="currentColor" stroke-width="1.6"/><path d="M13 13 L8.2 13.0" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M13 13 L13.0 5.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><div class="time">9:00</div><div class="what">Morning circle, then open play across the room's stations.</div></div>
-      <div class="tl-item"><svg class="clock" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="10.2" stroke="currentColor" stroke-width="1.6"/><path d="M13 13 L10.6 8.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M13 13 L13.0 5.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><div class="time">11:00</div><div class="what">Outside — the yard, or a walk to the park in the stroller train.</div></div>
-      <div class="tl-item"><svg class="clock" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="10.2" stroke="currentColor" stroke-width="1.6"/><path d="M13 13 L14.2 8.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M13 13 L13.0 20.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><div class="time">12:30</div><div class="what">Lunch together at the low tables, then nap and quiet time.</div></div>
-      <div class="tl-item"><svg class="clock" viewBox="0 0 26 26" fill="none" aria-hidden="true"><circle cx="13" cy="13" r="10.2" stroke="currentColor" stroke-width="1.6"/><path d="M13 13 L17.6 14.2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M13 13 L13.0 20.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><div class="time">3:30</div><div class="what">Snack, project time, and unhurried pickup through to six.</div></div>
+    <div class="archbox-map" style="border-radius:var(--arch-card);overflow:hidden;background:var(--sand)">
+      <img loading="lazy" width="1500" height="1000" decoding="async" loading="lazy" decoding="async" src="/g4.webp" alt="Reception and hallway at 79 Quay Street" style="width:100%;height:340px;object-fit:cover;display:block">
     </div>
   </div>
 </section>
 
-
-<section id="locations">
+<section class="prog" id="progress">
   <div class="shell">
     <div class="section-head rv">
-      <p class="eyebrow">Our locations</p>
-      <h2>Two doors, one school.</h2>
-      <p class="lede">Both sites share the same rooms, the same approach and the same room names. A family moving across Brooklyn moves from the Meadow to the Meadow.</p>
+      <p class="eyebrow">Follow the build</p>
+      <h2>Where we are.</h2>
+      <p class="lede">We will update this page as the space comes together.</p>
     </div>
-    <div class="lgrid rv">
-      <div class="loc">
-        <div class="loc-img">
-          <img loading="lazy" width="760" height="543" decoding="async" src="loc-greenpoint.webp" alt="Preschool classroom at Kindred Greenpoint">
-          <span class="soon">Opening March 2027</span>
-        </div>
-        <div class="loc-body">
-          <div class="hood">Greenpoint</div>
-          <h3>79 Quay Street</h3>
-          <p class="small" style="margin:10px 0 0">Brooklyn, NY 11222 — on the corner of West Street, steps from the waterfront and the India Street ferry.</p>
-          <dl>
-            <dt>Opening</dt><dd>March 2027</dd>
-            <dt>Hours</dt><dd>Monday to Friday, 7:30am – 6:00pm</dd>
-            <dt>Ages</dt><dd>3 months through pre-K</dd>
-          </dl>
-          <div class="loc-cta"><a href="greenpoint.html">Explore Greenpoint &#8594;</a></div>
-        </div>
-      </div>
-      <div class="loc">
-        <div class="loc-img">
-          <img loading="lazy" width="1309" height="633" decoding="async" src="ps-building.webp" alt="The Park Slope corner where Kindred's second location will open">
-          <span class="soon">Opening 2027</span>
-        </div>
-        <div class="loc-body">
-          <div class="hood">Park Slope</div>
-          <h3>85 4th Avenue</h3>
-          <p class="small" style="margin:10px 0 0">Brooklyn, NY 11217 — a ground-floor corner space at St Marks Place, opening 2027 with the same rooms and the same approach.</p>
-          <dl>
-            <dt>Opening</dt><dd>2027</dd>
-            <dt>Ages</dt><dd>3 months through pre-K</dd>
-          </dl>
-          <div class="loc-cta"><a href="park-slope.html">About Park Slope &#8594;</a></div>
-        </div>
-      </div>
+    <div class="steps rv">
+      <div class="step done"><div class="mark"></div><div class="when">Complete</div><div class="what">Space secured</div><div class="note">Ground floor at 79 Quay Street.</div></div>
+      <div class="step done"><div class="mark"></div><div class="when">Complete</div><div class="what">Interior design</div><div class="note">Layout, materials and finishes set.</div></div>
+      <div class="step"><div class="mark"></div><div class="when">In progress</div><div class="what">Filings and permits</div><div class="note">DOB and agency approvals.</div></div>
+      <div class="step"><div class="mark"></div><div class="when">Next</div><div class="what">Construction</div><div class="note">Build-out of both floors.</div></div>
+      <div class="step"><div class="mark"></div><div class="when">Next</div><div class="what">Licensing</div><div class="note">OCFS inspection and permit.</div></div>
+      <div class="step"><div class="mark"></div><div class="when">March 2027</div><div class="what">Doors open</div><div class="note">First families start.</div></div>
     </div>
   </div>
 </section>
+
 
 <section style="padding-top:0">
   <div class="shell pgrid rv">
@@ -731,64 +644,28 @@ document.addEventListener('error', function (e) {
     </div>
   </div>
 </section>
-<section id="faq" style="padding-top:0">
-  <div class="shell">
-    <div class="section-head rv">
-      <p class="eyebrow">Questions</p>
-      <h2>What parents ask first.</h2>
+
+<section class="cross">
+  <div class="shell cross-in rv">
+    <div>
+      <p class="eyebrow">Also from Kindred</p>
+      <h2>Park Slope is next.</h2>
+      <p class="lede" style="margin-bottom:22px">Our second Brooklyn site, at 85 4th Avenue, opens in 2027 with the same rooms, the same approach and the same room names.</p>
+      <a href="/park-slope/" class="btn btn-ghost">About Park Slope</a>
     </div>
-    <div class="faq rv">
-      <details>
-        <summary>What does it cost?</summary>
-        <div class="a"><p>Tuition is billed monthly and covers meals, snacks and all materials. Rates for the 2027 opening will be published before enrolment opens; families on the waitlist hear first.</p></div>
-      </details>
-      <details>
-        <summary>Do you offer part-time schedules?</summary>
-        <div class="a"><p>Yes. Alongside five-day enrolment we offer three-day schedules, subject to availability in each room. Part-time places are limited and fill first.</p></div>
-      </details>
-      <details>
-        <summary>What are the hours, and is there early drop-off?</summary>
-        <div class="a"><p>Monday to Friday, 7:30am to 6:00pm. Early drop-off from 7:00am is available as an add-on for families catching the ferry.</p></div>
-      </details>
-      <details>
-        <summary>What happens at meals?</summary>
-        <div class="a"><p>Lunch and two snacks are delivered daily by our food provider and prepped on site. We are a nut-free building and accommodate allergies and dietary requirements. Menus are shared with families each week.</p></div>
-      </details>
-      <details>
-        <summary>Does my child need to be potty trained?</summary>
-        <div class="a"><p>No. We work alongside families on toilet learning when a child is ready, and children in every room are welcome in nappies.</p></div>
-      </details>
-      <details>
-        <summary>What is the sick policy?</summary>
-        <div class="a"><p>Children stay home with a fever, vomiting or anything contagious, and may return 24 hours after symptoms resolve without medication. Full details are in the family handbook, which we share before enrolment.</p></div>
-      </details>
-      <details>
-        <summary>How do you handle security and pickup?</summary>
-        <div class="a"><p>The entrance is locked and staffed during opening hours. Only adults you have named in writing may collect your child, and photo ID is checked until we know them.</p></div>
-      </details>
-      <details>
-        <summary>How will I know how my child's day went?</summary>
-        <div class="a"><p>Daily notes and photos come through the parent app, plus a short conversation at pickup. Families also get scheduled check-ins through the year.</p></div>
-      </details>
-      <details>
-        <summary>Are you licensed?</summary>
-        <div class="a"><p>The centre will operate under a New York State OCFS permit. The permit and inspection history will be posted at reception and available on request.</p></div>
-      </details>
-      <details>
-        <summary>Are siblings given priority?</summary>
-        <div class="a"><p>Yes. Siblings of enrolled children are placed ahead of the general waitlist, and a sibling discount applies from the second child.</p></div>
-      </details>
+    <div class="cross-one">
+      <img loading="lazy" decoding="async" src="/ps-building.webp" alt="The Park Slope corner where Kindred's second location will open">
+      <span class="ccap">Park Slope — 85 4th Avenue</span>
     </div>
   </div>
 </section>
-
 
 <section class="tour" id="tour">
   <div class="shell tour-grid">
     <div class="rv">
       <p class="eyebrow">Now taking names</p>
-      <h2>Join the waitlist.</h2>
-      <p class="lede" style="margin-top:20px">Greenpoint opens in March 2027 and Park Slope follows. Families on the waitlist are placed first, hear rates before anyone else, and are invited to walk the space once it is safe to do so.</p>
+      <h2>Join the Greenpoint waitlist.</h2>
+      <p class="lede" style="margin-top:20px">We open in March 2027. Families on the waitlist are placed first, hear rates before anyone else, and are invited to walk the space once it is safe to do so.</p>
       <div class="offer">
         <h3>Founding families</h3>
         <ul>
@@ -810,11 +687,11 @@ document.addEventListener('error', function (e) {
           <label for="fa">Child's age at start</label>
           <select id="fa"><option>3–12 months</option><option>1–2 years</option><option>2–3 years</option><option>3 years – pre-K</option><option>Not yet born</option></select>
         </div>
-        <div class="field"><label for="floc">Preferred location</label><select id="floc"><option>Greenpoint — 79 Quay St</option><option>Park Slope — 85 4th Ave</option><option>Either location</option></select></div>
+        <input type="hidden" id="floc" value="Greenpoint — 79 Quay St"><div class="field"><label for="fl">Preferred start</label><select id="fl"><option>March 2027 (opening)</option><option>Spring 2027</option><option>Summer 2027</option><option>Autumn 2027</option><option>Not sure yet</option></select></div>
       </div>
-      <div class="frow"><div class="field"><label for="fl">Preferred start</label><select id="fl"><option>March 2027 (opening)</option><option>Spring 2027</option><option>Summer 2027</option><option>Autumn 2027</option><option>Not sure yet</option></select></div><div></div></div>
-      <button class="btn btn-clay" id="submitBtn" style="width:100%">Join the waitlist</button>
-      <p class="note-line">We reply within one business day. We use your details only to contact you about a place at Kindred — never sold, never shared. See our <a href="privacy.html" style="color:var(--clay);font-weight:600">privacy notice</a>.</p>
+      
+      <button class="btn btn-clay" id="submitBtn" style="width:100%">Join the Greenpoint waitlist</button>
+      <p class="note-line">We reply within one business day. We use your details only to contact you about a place at Kindred — never sold, never shared. See our <a href="/privacy/" style="color:var(--clay);font-weight:600">privacy notice</a>.</p>
       <div class="ok" id="ok"></div>
     </div>
   </div>
@@ -834,21 +711,21 @@ document.addEventListener('error', function (e) {
   <div class="shell">
     <div class="fgrid">
       <div>
-        <div class="fmark"><img src="logo-linen.png" alt="Kindred"></div>
+        <div class="fmark"><img src="/logo-linen.png" alt="Kindred"></div>
         <p style="max-width:30ch">Rooted in curiosity. Growing together.</p>
       </div>
       <div>
         <h4>Locations</h4>
-        <a href="greenpoint.html">Greenpoint — 79 Quay Street</a>
-        <a href="park-slope.html">Park Slope — 85 4th Avenue</a>
+        <a href="/greenpoint/">Greenpoint — 79 Quay Street</a>
+        <a href="/park-slope/">Park Slope — 85 4th Avenue</a>
       </div>
       <div>
         <h4>Explore</h4>
-        <a href="#story">Our story</a>
-        <a href="#approach">How we teach</a>
-        <a href="#rooms">Rooms and ages</a>
-        <a href="#day">A day here</a>
-        <a href="#faq">Questions</a>
+        <a href="/#story">Our story</a>
+        <a href="/#approach">How we teach</a>
+        <a href="/#rooms">Rooms and ages</a>
+        <a href="/#day">A day here</a>
+        <a href="/#faq">Questions</a>
       </div>
       <div>
         <h4>Contact</h4>
@@ -867,7 +744,7 @@ document.addEventListener('error', function (e) {
     <div class="fbot">
       <span>© 2026 Kindred · Brooklyn, New York</span>
       <span class="flegal">
-        <a href="privacy.html">Privacy</a>
+        <a href="/privacy/">Privacy</a>
         <a href="privacy.html#terms">Terms of use</a>
         <a href="privacy.html#accessibility">Accessibility</a>
       </span>
@@ -876,7 +753,7 @@ document.addEventListener('error', function (e) {
 </footer>
 
 <div id="cookie" role="region" aria-label="Privacy notice">
-  <p>This site keeps one small item in your browser to remember that you have seen this notice. Nothing else is stored and nothing is shared. <a href="privacy.html">Read more</a>.</p>
+  <p>This site keeps one small item in your browser to remember that you have seen this notice. Nothing else is stored and nothing is shared. <a href="/privacy/">Read more</a>.</p>
   <button id="cookieOk" type="button">Got it</button>
 </div>
 
