@@ -1,37 +1,47 @@
-KINDRED — CLEAN URL UPDATE
-==========================
+KINDRED — FIX FOR THE BROKEN HOMEPAGE
+=====================================
 
-The site now uses folder URLs:
+WHAT WENT WRONG
+---------------
+The last upload flattened the folders. greenpoint/index.html landed
+at the repo root and overwrote index.html, so kindredbk.nyc showed
+the Greenpoint page. The greenpoint.html redirect stub then pointed
+at /greenpoint/ which resolved back to itself — an endless loop.
 
-    kindredbk.nyc/              (index.html at the repo root)
-    kindredbk.nyc/greenpoint/   (greenpoint/index.html)
-    kindredbk.nyc/park-slope/   (park-slope/index.html)
-    kindredbk.nyc/privacy/      (privacy/index.html)
+THE FIX — NO FOLDERS AT ALL
+---------------------------
+GitHub Pages already serves greenpoint.html at the clean URL
+/greenpoint/ on its own. The folders were never needed.
 
-No ".html" shows in the address bar.
+So: four plain .html files at the repo root. Nothing nested.
 
-UPLOAD
-------
-Drop everything in this folder into the repo root, keeping the
-greenpoint/, park-slope/ and privacy/ folders intact.
-
-The three loose files greenpoint.html, park-slope.html and
-privacy.html are REDIRECT STUBS. They replace your current pages
-and bounce anyone on an old link to the new address. Keep them.
-
-Your existing images (hero, story, g1-g4, room-*, loc-greenpoint)
-stay exactly where they are at the repo root. Do not move them.
-
-IMAGE PATHS
------------
-All image and link paths are now root-relative (/hero.webp rather
-than hero.webp) so they resolve the same from every folder depth.
-This means opening a page by double-clicking the file will NOT show
-images — that is expected. It only works over a web server, which
-is what GitHub Pages is.
-
-AFTER UPLOADING, CHECK
+DO THIS, IN THIS ORDER
 ----------------------
-  kindredbk.nyc/greenpoint/     loads with images
-  kindredbk.nyc/greenpoint.html redirects to the above
-  kindredbk.nyc/sitemap.xml     lists the four clean URLs
+1. In the repo, DELETE these three folders if they exist:
+       greenpoint/
+       park-slope/
+       privacy/
+
+2. Upload the four .html files in this zip to the repo root,
+   overwriting what is there:
+       index.html        <- the brand home (Rooted in curiosity)
+       greenpoint.html
+       park-slope.html
+       privacy.html
+
+3. Upload sitemap.xml, overwriting.
+
+4. Leave every image where it is. Nothing moves.
+
+THEN CHECK
+----------
+   kindredbk.nyc/              -> "Rooted in curiosity. Growing together."
+   kindredbk.nyc/greenpoint/   -> "Kindred Greenpoint."
+   kindredbk.nyc/park-slope/   -> "Kindred Park Slope."
+   kindredbk.nyc/privacy/      -> privacy page
+
+Hard-refresh with Ctrl+Shift+R. Pages takes a minute to rebuild.
+
+If the homepage still shows Greenpoint, the root index.html did not
+overwrite — open index.html in the repo and confirm the first
+heading reads "Rooted in curiosity."
