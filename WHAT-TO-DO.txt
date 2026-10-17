@@ -1,50 +1,43 @@
-KINDRED — WHAT'S MISSING, WHAT'S EXTRA
-======================================
+KINDRED — 404 FIX
+=================
 
-MISSING (that's why it's broken)
---------------------------------
-1. The real homepage. The index.html in your repo is still the
-   GREENPOINT page. kindredbk.nyc shows "Kindred Greenpoint."
-   The correct one is in this zip — its first heading reads
-   "Rooted in curiosity. Growing together."
+WHAT WAS WRONG
+--------------
+greenpoint.html and park-slope.html in your repo were still the
+REDIRECT STUBS from an earlier upload. Each one bounced to
+/greenpoint/ and /park-slope/ — with a trailing slash. A trailing
+slash makes GitHub Pages look for a FOLDER, and there isn't one,
+so it 404'd.
 
-2. Eleven content images are not at the repo root. They are only
-   inside the images/ folder, but the pages look for them at the
-   root. All eleven are in this zip:
-       hero.webp  story.webp
-       g1.webp  g2.webp  g3.webp  g4.webp
-       room-nest.webp  room-grove.webp
-       room-meadow.webp  room-workshop.webp
-       loc-greenpoint.webp
+Meanwhile /greenpoint WITHOUT the slash already worked fine — it
+serves greenpoint.html. That is the form to use.
 
-3. .nojekyll — missing. Without it GitHub runs Jekyll over the
-   site and skips any file starting with an underscore. It is in
-   this zip (it is an empty file, that is normal).
+THE FIX
+-------
+Every link now points to /greenpoint, /park-slope and /privacy
+with no trailing slash, and the four .html files here are the real
+pages, not stubs.
 
-UPLOAD everything in this zip to the repo ROOT, overwriting.
-There is only ONE index.html in here, so nothing can collide.
+UPLOAD all six files to the repo ROOT, overwriting:
 
+    index.html          "Rooted in curiosity. Growing together."
+    greenpoint.html     "Kindred Greenpoint."
+    park-slope.html     "Kindred Park Slope."
+    privacy.html        "Privacy, terms and accessibility"
+    sitemap.xml
+    qr-greenpoint.png / qr-parkslope.png   (QR targets updated too)
 
-EXTRA (delete these from the repo)
-----------------------------------
-   _director-block.html   placeholder text, publicly reachable.
-                          Keep it on your computer, not in the repo.
-   README.txt             my upload notes, no reason to be public
-   README.md              outdated, describes the old folder layout
-   download               junk file from the first upload, no
-                          extension, 2 months old
+No folders. Do not create greenpoint/ or park-slope/ folders.
 
-OPTIONAL
---------
-   images/   Once the eleven files above are at the root, this
-             folder is a duplicate. Leave it for now — delete it
-             only after you confirm the site renders correctly.
+CHECK
+-----
+   kindredbk.nyc/             -> Rooted in curiosity
+   kindredbk.nyc/greenpoint   -> Kindred Greenpoint
+   kindredbk.nyc/park-slope   -> Kindred Park Slope
+   kindredbk.nyc/privacy      -> privacy page
 
+Hard-refresh with Ctrl+Shift+R.
 
-AFTER UPLOADING, CHECK IN THIS ORDER
-------------------------------------
-   kindredbk.nyc/              -> "Rooted in curiosity."
-   kindredbk.nyc/greenpoint/   -> "Kindred Greenpoint."
-   kindredbk.nyc/park-slope/   -> "Kindred Park Slope."
-
-Hard-refresh with Ctrl+Shift+R. Pages takes a minute to rebuild.
+If any page still shows "Redirecting…", that file did not
+overwrite. Open it in the repo — a real page is ~45KB, a stub is
+under 1KB.
