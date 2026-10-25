@@ -256,6 +256,10 @@ section{padding:100px 0;scroll-margin-top:100px}
   border:2px solid var(--rule);margin:-8px 0 16px;
 }
 .step.done .mark{background:var(--olive);border-color:var(--olive)}
+/* The step under way: the olive line runs on into its dot and stops
+   there, and the dot stays an open ring — reached, not finished. */
+.step.now::before{content:"";position:absolute;top:-2px;left:0;width:25px;height:2px;background:var(--olive)}
+.step.now .mark{border-color:var(--olive);background:var(--paper)}
 .step .when{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--clay);margin-bottom:7px}
 .step .what{font-family:var(--display);font-size:16px;line-height:1.3}
 .step .note{font-size:13px;color:rgba(42,39,33,.6);margin-top:6px;line-height:1.5}
@@ -333,6 +337,7 @@ footer p:last-child{margin-bottom:0}
   .lgrid,.pgrid,.hood-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr;gap:0 24px}
   .step{padding:0 0 24px}
+  .step.now::before{display:none}
   .fgrid{grid-template-columns:1fr 1fr;gap:40px}
   nav.links{display:none}
   nav.links.open{display:flex;position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;padding:22px 32px;gap:12px;border-bottom:1px solid var(--rule);box-shadow:0 14px 26px rgba(42,39,33,.1)}
@@ -354,6 +359,7 @@ footer p:last-child{margin-bottom:0}
   .room-img,.gcell img{height:132px}
   .tl{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
+  .step.now::before{display:none}
   .hero{padding:52px 0 64px}
   .room-body{padding:24px 22px 26px}
   .vcard{padding:48px 26px 34px}
@@ -628,6 +634,7 @@ document.addEventListener('error', function (e) {
   </div>
 </section>
 
+
 <section class="prog" id="progress">
   <div class="shell">
     <div class="section-head rv">
@@ -638,14 +645,13 @@ document.addEventListener('error', function (e) {
     <div class="steps rv">
       <div class="step done"><div class="mark"></div><div class="when">Complete</div><div class="what">Space secured</div><div class="note">Ground floor at 79 Quay Street.</div></div>
       <div class="step done"><div class="mark"></div><div class="when">Complete</div><div class="what">Interior design</div><div class="note">Layout, materials and finishes set.</div></div>
-      <div class="step"><div class="mark"></div><div class="when">In progress</div><div class="what">Filings and permits</div><div class="note">DOB and agency approvals.</div></div>
+      <div class="step now"><div class="mark"></div><div class="when">In progress</div><div class="what">Filings and permits</div><div class="note">DOB and agency approvals.</div></div>
       <div class="step"><div class="mark"></div><div class="when">Next</div><div class="what">Construction</div><div class="note">Build-out of both floors.</div></div>
       <div class="step"><div class="mark"></div><div class="when">Next</div><div class="what">Licensing</div><div class="note">OCFS inspection and permit.</div></div>
       <div class="step"><div class="mark"></div><div class="when">March 2027</div><div class="what">Doors open</div><div class="note">First families start.</div></div>
     </div>
   </div>
 </section>
-
 
 <section style="padding-top:0">
   <div class="shell pgrid rv">
