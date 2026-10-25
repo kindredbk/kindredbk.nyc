@@ -118,5 +118,21 @@ footer a{color:rgba(246,240,228,.85)}
   </div>
 </footer>
 
+<script>
+// Keep the address bar reading kindredbk.nyc/privacy rather than carrying a
+// section fragment; the jump has already happened by the time this runs.
+(function(){
+  function dropHash(){
+    if(!location.hash) return;
+    try{ history.replaceState(null, '', location.pathname + location.search); }catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if(a) setTimeout(dropHash, 0);
+  });
+  if(location.hash){ window.addEventListener('load', function(){ setTimeout(dropHash, 500); }); }
+  window.addEventListener('hashchange', function(){ setTimeout(dropHash, 600); });
+})();
+</script>
 </body>
 </html>

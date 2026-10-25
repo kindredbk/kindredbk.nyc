@@ -711,7 +711,7 @@ document.addEventListener('error', function (e) {
       
       <div class="hp" aria-hidden="true"><label for="fc">Company</label><input id="fc" type="text" tabindex="-1" autocomplete="off"></div>
       <button class="btn btn-clay" id="submitBtn" style="width:100%">Join the Greenpoint waitlist</button>
-      <p class="note-line">We reply within one business day. We use your details only to contact you about a place at Kindred — never sold, never shared. See our <a href="/privacy" style="color:var(--clay);font-weight:600">privacy notice</a>.</p>
+      <p class="note-line">We will add you to the waitlist and reach out once we are ready for tours. We use your details only to contact you about a place at Kindred — never sold, never shared. See our <a href="/privacy" style="color:var(--clay);font-weight:600">privacy notice</a>.</p>
       <div class="ok" id="ok"></div>
     </div>
   </div>
@@ -788,6 +788,26 @@ document.addEventListener('error', function (e) {
   nav.addEventListener('click',function(e){
     if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');}
   });
+
+  // Section links are scroll targets, not destinations. The browser's own
+  // smooth scroll and scroll-margin are already right, so let the jump happen
+  // natively and only take the fragment back out of the address bar — it
+  // should read kindredbk.nyc, not kindredbk.nyc/#rooms.
+  function dropHash(){
+    if(!location.hash) return;
+    try{ history.replaceState(null, '', location.pathname + location.search); }catch(e){}
+  }
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if(a) setTimeout(dropHash, 0);
+  });
+  // Someone arriving on /#rooms from another page lands mid-scroll; clear it
+  // once that jump has settled. Cleanup waits for load so the browser can keep
+  // correcting the scroll position while images settle the layout.
+  if(location.hash){ window.addEventListener('load', function(){ setTimeout(dropHash, 500); }); }
+  // A fragment-only navigation — typed, pasted, or Back/Forward — fires no
+  // load event at all, so that listener alone would miss it.
+  window.addEventListener('hashchange', function(){ setTimeout(dropHash, 600); });
   // ---------------------------------------------------------------
   // WAITLIST  ->  HUBSPOT
   // The two ids live in /kindred-config.js. Edit that one file, not
@@ -799,7 +819,7 @@ document.addEventListener('error', function (e) {
   var GUID   = CFG.FORM_GUID || '';
   var EMAIL  = CFG.EMAIL || 'hello@kindredbk.nyc';
 
-  var THANKS = "Thank you — you're on the waitlist. We reply within one business day.";
+  var THANKS = "Thank you — you're on the waitlist. We will reach out once we are ready for tours.";
   var FAIL   = 'Something went wrong. Email <a href="mailto:' + EMAIL + '" style="color:#fff;text-decoration:underline">' + EMAIL + '</a> and we will add you by hand.';
 
   // Remember how the visitor arrived, so the form can still report it after
