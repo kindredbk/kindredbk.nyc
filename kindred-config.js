@@ -11,11 +11,15 @@
      FORM_GUID  HubSpot → Marketing → Forms → your form → Share → the
                 last part of the embed code (e.g. 7f3c1a2e-...-9b2d)
 
-   While these are blank the form falls back to opening the visitor's
-   email app, exactly as it behaves today. Nothing breaks either way.
+   Both are filled in, so the waitlist form posts straight to HubSpot.
+   Account is in HubSpot's na2 region; submissions go to the shared
+   api.hsforms.com endpoint, which routes by Account ID.
+
+   Blank either value and the form stops delivering: it then tells the
+   visitor to email hello@kindredbk.nyc instead.
 --------------------------------------------------------------------- */
 window.KINDRED_FORM = {
-  PORTAL_ID: '',
-  FORM_GUID: '',
+  PORTAL_ID: '247794912',
+  FORM_GUID: 'a835cc01-26c2-4f14-8df9-6ae840f21f1d',
   EMAIL: 'hello@kindredbk.nyc'
 };

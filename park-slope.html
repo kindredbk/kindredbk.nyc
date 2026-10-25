@@ -765,14 +765,10 @@ document.addEventListener('error', function (e) {
     sb.textContent = 'Sending…';
     function done(good, msg){ sb.disabled = false; sb.textContent = label; say(msg, good); }
 
-    if (!PORTAL || !GUID) {
-      var body = 'Name: ' + n + '%0D%0AEmail: ' + e + '%0D%0ALocation: ' + loc +
-                 "%0D%0AChild's age at start: " + age + '%0D%0APreferred start: ' + start;
-      done(true, 'Opening your email app. If nothing happens, write to ' + EMAIL + ' directly.');
-      window.location.href = 'mailto:' + EMAIL +
-        '?subject=' + encodeURIComponent('Kindred waitlist (' + loc + ') - ' + n) + '&body=' + body;
-      return;
-    }
+    // No mailto fallback: hijacking the visitor's mail client loses most of
+    // them silently. If HubSpot is not configured, say so and give them an
+    // address they can choose to use.
+    if (!PORTAL || !GUID) { done(false, FAIL); return; }
 
     var parts = n.split(/\s+/), first = parts.shift(), last = parts.join(' ');
     var ctx = { pageUri: location.href, pageName: document.title };
@@ -797,10 +793,10 @@ document.addEventListener('error', function (e) {
       { name:'email',              value:e },
       { name:'firstname',          value:first },
       { name:'lastname',           value:last || first },
-      { name:'kindred_location',   value:loc },
-      { name:'child_age_at_start', value:age },
-      { name:'preferred_start',    value:start },
-      { name:'kindred_source',     value:source() }
+      { name:'waitlist_location',   value:loc },
+      { name:'waitlist_child_age', value:age },
+      { name:'waitlist_preferred_start',    value:start },
+      { name:'waitlist_source',     value:source() }
     ];
 
     // HubSpot rejects the WHOLE submission if the form is missing one of the
